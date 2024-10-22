@@ -13,6 +13,7 @@ from langchain_core.messages import AIMessage, HumanMessage
 from langchain_core.tools import tool
 import chainlit as cl
 import random
+from yahoo_finance import MarketAnalysisTool
 
 load_dotenv()
 chat_history = []
@@ -21,11 +22,24 @@ distributionDone = False
 user_profile = {}
 profile_complete = False
 
+@tool("MarketAnalysisTool", return_direct=True)
+def market_analysis_tool(api_key: str) -> dict:
+    """
+    Use this tool to analyze the market and rank asset classes based on current performance.
+    """
+    api_key = "KYpAilMplU1cVSK0H7N1P5OoR2znLbsIJa9yOER1"  
+    market_tool = MarketAnalysisTool(api_key=api_key)
+    rankings = market_tool.analyze_and_rank()
+    if rankings:
+        return {rank: {"Category": category, "Score": score} for rank, (category, score) in enumerate(rankings, 1)}
+    else:
+        return "Unable to retrieve market data"
+
 @tool("InvestmentTool", return_direct=False)
 def InvestmentTool(sum_of_money: float = None, number_of_stocks: int = None) -> dict:
     """
-    Use this tool to advise the user on how to allocate their money into a given number of stocks.
-    You need to provide two parameters: sum_of_money (the total amount to invest) and number_of_stocks (the number of stocks to invest in).
+    Use this tool to advise the user on how to allocate their money into a given number of asset classes.
+    You need to provide two parameters: sum_of_money (the total amount to invest) and number_of_stocks (the number of asset classes to invest in).
     The tool will return a dictionary with a random percentage distribution across the given number of stocks.
     """
     global investment_distribution, distributionDone
@@ -67,29 +81,18 @@ prompt = ChatPromptTemplate.from_messages([
         '''
 You are an investment advisor that helps users allocate their investment across a number of investment options.
 You can provide general investment advice or personalized advice based on the user's profile.
-Here are the list of investment options you can select from:
-1. Stocks/Equities
-2. Bonds
-3. Mutual Funds
-4. Exchange-Traded Funds (ETFs)
-5. Real Estate
-6. Certificates of Deposit (CDs)
-7. Retirement Accounts 
-8. Commodities
-9. Cryptocurrencies
-10. Savings Accounts
-11. Hedge Funds
-12. Venture Capital/Private Equity
-13. Annuities
-14. Options and Derivatives
 
 For general advice:
-1. Determine the sum of money and the number of stocks the user wants to invest in.
-2. Use the InvestmentTool to calculate the percentage distribution of the sum across the investment options.
-3. Provide the recommendation to the user.
+If user asks for general advice, you must use the MarketAnalysisTool to analyze the market and rank asset classes based on current performance. 
+You must never ask a user for profile information in the case where the user ask for general investment advice.You must never use the InvestmentTool to distribute the user's money in the case where the user ask for general investment advice.
+
+1. You must use the MarketAnalysisTool to analyze the market and rank asset classes based on current performance.
+2. Provide the recommendation to the user based on the best performing asset classes.
+1. If the user specify an amount of money they have to invest, distribute it according to the weights of each asset class
+3. Provide the recommendation to the user and inform them that this allocation is based on the current market performance according to data from Yahoo Finance.
 
 For personalized advice:
-1. Ask the user of the amount of money they have to invest and number of stocks they will like to invest in just as in the general case 
+1. Ask the user of the amount of money they have to invest and number of asset classes they will like to invest in just as in the general case 
 Inform the user that you need to gather their profile information for personalized advice.
 2. Use the ProfileTool to gather the following information:
    - Name
@@ -98,13 +101,20 @@ Inform the user that you need to gather their profile information for personaliz
    - Investment Length (Options: Short-term, Medium-term, Long-term)
    - Investment Goal (Options: Retirement, Wealth Accumulation, Specific Purchase, Other)
    - Risk Tolerance Level (Options: Low, Medium, High)
-3. After gathering the profile and the amount of money and number of investment options, use your best guess to recommend a distribution of their money to the number of options. Your remcommedations must be within the investments listed here. 
-Do not recommend anything outside of the investment otpions provided. You're free to use your own judgement and knowledge of those investments to do the recommendation in whatever way you see fit.
-  - Explain to the user that the recommendation is based on the information they provided and that it is important for them to further research and consult with a financial advisor before making any investment decisions.
-  If for example a young under 30 years old person with a high risk tolerance wants to invest in 5 options, you might recommend a higher percentage of their money in high-risk investment options.
-  In terms of risk, use your best judgement to rank the available investment options from low to high risk.
+3. You must use the MarketAnalysisTool to analyze the market and rank asset classes based on current performance.
+4. Provide the recommendation to the user based on their profile information and the best performing asset classes.
+5. You must prioritize the investment options based on the user's risk tolerance level, investement length, and investment goals. 
+ For example, if the user has a high risk tolerance, you might recommend a higher percentage of their money in high-risk investment options.
+ 6. As in the general case, if the user specify an amount of money they have to invest, distribute it according to the weights of each asset class
+ Your recommendations should be within the asset classes returned from the MarketAnalysisTool. Do not recommend anything outside of  what MarketAnalysisTool returns.
+ You are free to recommend low performing asset classes if the user's profile information suggests that it is the best option for them based on risk tolerance, investment length, and investment goals.
+
+
+7. You must always make a disclaimer to the user that the recommendation is based on the information they provided and current market performance data i.e average price percentage price change information from Yahoo Finance.
 The user profile information will be sent to a form for further processing. They might come in different order and you should be able to handle that.Ask for any missing information to be able to send the profile information to the form.
 Always ask for clarification if any information is missing or unclear.
+
+In either case, make sure the distribution is displayed to the user as a pie chart.
         '''
     ),
     MessagesPlaceholder(variable_name="chat_history"),

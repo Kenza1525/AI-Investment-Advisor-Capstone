@@ -1,4 +1,5 @@
 #User Profiling
+
 class UserProfile:
     def __init__(self, name, age, income, financial_goal, investment_horizon, risk_tolerance):
         self.name = name
@@ -9,6 +10,8 @@ class UserProfile:
         self.risk_tolerance = risk_tolerance
         #self.monthly_addition = additon
 
+
+
     def display_profile(self):
         print(f"User: {self.name}, Age: {self.age}")
         print(f"Income: {self.income}")
@@ -17,16 +20,16 @@ class UserProfile:
         print(f"Risk Tolerance: {self.risk_tolerance}")
 
 # Example user input
-user = UserProfile(
-    name="John Doe", 
-    age=35, 
-    income=60000, 
-    financial_goal="Retirement", 
-    investment_horizon=25, 
-    risk_tolerance="Moderate"
-)
+# user = UserProfile(
+#     name="John Doe", 
+#     age=35, 
+#     income=60000, 
+#     financial_goal="Retirement", 
+#     investment_horizon=25, 
+#     risk_tolerance="Moderate"
+# )
 
-user.display_profile()
+# user.display_profile()
 
 #Risk profiling
 def risk_profile(user):
@@ -44,8 +47,8 @@ def risk_profile(user):
         return risk_categories["Aggressive"]
 
 # Example
-recommended_risks = risk_profile(user)
-print(f"Recommended Asset Classes for {user.name}: {recommended_risks}")
+# recommended_risks = risk_profile(user)
+# print(f"Recommended Asset Classes for {user.name}: {recommended_risks}")
 
 #Investment options
 investment_options = {
@@ -67,10 +70,10 @@ def categorize_investments(recommended_assets):
     return categorized_investments
 
 # Example
-categorized_investments = categorize_investments(recommended_risks)
-print("Categorized Investments:")
-for asset, details in categorized_investments.items():
-    print(f"{asset}: Risk = {details['Risk']}, Return = {details['Return']}")
+# categorized_investments = categorize_investments(recommended_risks)
+# print("Categorized Investments:")
+# for asset, details in categorized_investments.items():
+#     print(f"{asset}: Risk = {details['Risk']}, Return = {details['Return']}")
 
 
 #Portfolio construction
@@ -87,17 +90,17 @@ def portfolio_risk(weights, risks):
     return np.sqrt(np.dot(weights.T, np.dot(np.cov(risks), weights)))
 
 # Example - Random portfolio construction
-assets = list(categorized_investments.keys())
-returns = [investment_options[asset]["Return"] for asset in assets]
-risks = [investment_options[asset]["Risk"] for asset in assets]
+# assets = list(categorized_investments.keys())
+# returns = [investment_options[asset]["Return"] for asset in assets]
+# risks = [investment_options[asset]["Risk"] for asset in assets]
 
-weights = random_weights(len(assets))
-expected_return = portfolio_return(weights, returns)
-expected_risk = portfolio_risk(weights, risks)
+# weights = random_weights(len(assets))
+# expected_return = portfolio_return(weights, returns)
+# expected_risk = portfolio_risk(weights, risks)
 
-print(f"Portfolio Weights: {weights}")
-print(f"Expected Portfolio Return: {expected_return:.2f}%")
-print(f"Expected Portfolio Risk: {expected_risk:.2f}")
+# print(f"Portfolio Weights: {weights}")
+# print(f"Expected Portfolio Return: {expected_return:.2f}%")
+# print(f"Expected Portfolio Risk: {expected_risk:.2f}")
 
 
 #Porfolio rebalancing
@@ -106,9 +109,9 @@ def rebalance_portfolio(weights, target_allocation):
     return new_weights / sum(new_weights)
 
 # Example
-target_allocation = [0.3, 0.4, 0.2, 0.1]  # New target allocation for the 4 assets
-new_weights = rebalance_portfolio(weights, target_allocation)
-print(f"New Portfolio Weights after Rebalancing: {new_weights}")
+# target_allocation = [0.3, 0.4, 0.2, 0.1]  # New target allocation for the 4 assets
+# new_weights = rebalance_portfolio(weights, target_allocation)
+# print(f"New Portfolio Weights after Rebalancing: {new_weights}")
 
 
 #Monitoring the portfolio
@@ -120,5 +123,5 @@ def monitor_portfolio(weights, returns, risks):
     print(f"Monitoring Portfolio: Return = {current_return:.2f}%, Risk = {current_risk:.2f}")
 
 # Example monitoring
-monitor_portfolio(new_weights, returns, risks)
+# monitor_portfolio(new_weights, returns, risks)
 
