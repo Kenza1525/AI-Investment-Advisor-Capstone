@@ -89,9 +89,9 @@ def submit_profile(n_clicks, name, age, education, investment_length, investment
         if success:
             # Call the function that generates the investment distribution (already working in your original app)
             investment_distribution = { 
-                'Stock A': 3000,  # Example values
-                'Stock B': 1500,  # Example values
-                'Stock C': 2500   # Example values
+                'Asset A': 3000,  # Example values
+                'Asset B': 1500,  # Example values
+                'Asset C': 2500   # Example values
             }
 
             # Return the success message and investment distribution data
