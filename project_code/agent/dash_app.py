@@ -2,7 +2,7 @@ from dash import Dash, html, dcc, Input, Output, State
 import plotly.express as px
 import pandas as pd
 import os
-from profiles_db import init_db, insert_profile  # Import database functions
+from profile_db import init_db, insert_profile  # Import database functions
 
 # Initialize the database when the app starts
 init_db()
@@ -103,4 +103,3 @@ def submit_profile(n_clicks, name, age, education, investment_length, investment
 
 if __name__ == '__main__':
     app.run_server(debug=True)
-
