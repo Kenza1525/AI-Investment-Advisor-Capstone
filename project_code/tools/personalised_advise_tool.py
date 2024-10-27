@@ -18,30 +18,22 @@ class PersonalizedAdviceTool:
 
         # Handle case where market data is unavailable
         if not rankings:
-            return {
-                "message": "Market data unavailable, recommending conservative strategy.",
-                "investment_distribution": {"bonds": sum_of_money}
-            }
+            return {"bonds": sum_of_money}
 
         # Filter the rankings to only include categories from the user's risk profile
         filtered_rankings = [(category, score) for category, score in rankings if category in categorized_investments]
 
         # If no valid filtered rankings are available, apply a conservative fallback
         if not filtered_rankings:
-            return {
-                "message": "No valid rankings found for the user's profile, defaulting to conservative strategy.",
-                "investment_distribution": {"bonds": sum_of_money}
-            }
+            return {"bonds": sum_of_money}
+           
 
         # Adjust rankings based on the user's risk tolerance
         adjusted_rankings = self.adjust_allocation_based_on_profile(filtered_rankings, user_profile.risk_tolerance)
 
         # If no valid rankings were returned, apply a conservative fallback
         if not adjusted_rankings:
-            return {
-                "message": "Unable to adjust rankings, defaulting to conservative strategy.",
-                "investment_distribution": {"bonds": sum_of_money}
-            }
+            return {"bonds": sum_of_money}
 
         # Distribute the investment amount based on adjusted rankings
         total_score = sum(score for _, score in adjusted_rankings)
@@ -50,10 +42,7 @@ class PersonalizedAdviceTool:
             for category, score in adjusted_rankings
         }
 
-        return {
-            "message": "Investment distribution based on personalized profile.",
-            "investment_distribution": investment_distribution
-        }
+        return  investment_distribution
 
     def adjust_allocation_based_on_profile(self, rankings, risk_tolerance):
         # Adjust allocation based on user's risk profile

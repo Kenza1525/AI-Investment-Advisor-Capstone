@@ -30,8 +30,12 @@ profile_complete = False
 @tool("GeneralAdviceTool", return_direct=False)
 def general_advice_tool(sum_of_money: float = None, api_key: str = None) -> dict:
     '''Returns a recommended distribution of an amount of money across asset classes based on current market performance.'''
+    global investment_distribution, distributionDone
     general_tool = GeneralAdviceTool(api_key="KYpAilMplU1cVSK0H7N1P5OoR2znLbsIJa9yOER1")
-    return general_tool.provide_advice(sum_of_money=sum_of_money)
+    investment_distribution = general_tool.provide_advice(sum_of_money=sum_of_money)
+    distributionDone = True
+    #return general_tool.provide_advice(sum_of_money=sum_of_money)
+    return investment_distribution
 
 
 @tool("PersonalizedAdviceTool", return_direct=False)
@@ -44,19 +48,22 @@ def personalized_advice_tool(profile_info: dict = None, sum_of_money: float = No
         investment_horizon=profile_info.get("Investment Length"),
         risk_tolerance=profile_info.get("Risk Tolerance Level")
     )
-    
+    global investment_distribution, distributionDone
     personalized_tool = PersonalizedAdviceTool(api_key="KYpAilMplU1cVSK0H7N1P5OoR2znLbsIJa9yOER1")
-    return personalized_tool.provide_advice(user_profile=user, sum_of_money=sum_of_money)
+    investment_distribution = personalized_tool.provide_advice(user_profile=user, sum_of_money=sum_of_money)
+    distributionDone = True
+    return investment_distribution
+    #return personalized_tool.provide_advice(user_profile=user, sum_of_money=sum_of_money)
 
 # Plot function for investment distribution
-def plot_investment_distribution(investment_distribution):
-    labels = investment_distribution.keys()
-    sizes = investment_distribution.values()
+# def plot_investment_distribution(investment_distribution):
+#     labels = investment_distribution.keys()
+#     sizes = investment_distribution.values()
     
-    plt.figure(figsize=(7, 7))
-    plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140)
-    plt.title('Investment Distribution')
-    #plt.show()
+#     plt.figure(figsize=(7, 7))
+#     plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140)
+#     plt.title('Investment Distribution')
+#     #plt.show()
 
 # Chainlit setup
 @cl.on_chat_start
@@ -120,7 +127,7 @@ Always include a disclaimer to the user that the recommendations are based on th
 
 Ask for any missing information needed to complete the user's profile before providing personalized advice.
 
-In either case (general or personalized advice), ensure that the investment distribution is displayed to the user as a pie chart.
+In either case (general or personalized advice), ensure that the investment distribution is sent to the dash app to display as a pie chart. If there is any issue that prevents you from sending the distribution to be displayed as pie chart, report that.
         '''
     ),
     MessagesPlaceholder(variable_name="chat_history"),
@@ -149,6 +156,9 @@ async def handle_message(message: cl.Message):
     ])
 
     await cl.Message(output_content).send()
+
+    print(investment_distribution)
+    print(distributionDone)
 
     if distributionDone:
         fn = cl.CopilotFunction(name="investment_distribution", args=investment_distribution)

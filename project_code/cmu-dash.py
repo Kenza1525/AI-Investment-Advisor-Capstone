@@ -37,7 +37,7 @@ app.layout = html.Div(children=[
                                    style={"font-family": 'sans-serif', 'font-size': 20})]),
 
             html.Div([html.Label(['Risk Tolerance'], style={'font-family': 'sans-serif'}),
-                      dcc.Dropdown(id='risk_tolerance', options=['Low', 'Medium', 'High'],
+                      dcc.Dropdown(id='risk_tolerance', options=['Conservative', 'Moderate', 'Aggressive'],
                                    style={"font-family": 'sans-serif', 'font-size': 20})]),
         ]),
         html.Button('Submit Profile', id='submit-profile', style={"width": "150px", "height": "40px", "font-family": 'sans-serif', 'font-size': 20, 'margin-top': '20px'}),
@@ -61,8 +61,8 @@ def update_pie_chart(data):
         return px.pie(title="No data available")
 
     # Create a DataFrame from the investment data
-    df = pd.DataFrame(list(data.items()), columns=['Stock', 'Amount'])
-    fig = px.pie(df, values='Amount', names='Stock', title='Investment Distribution')
+    df = pd.DataFrame(list(data.items()), columns=['Asset', 'Amount'])
+    fig = px.pie(df, values='Amount', names='Asset', title='Investment Distribution')
     return fig
 
 # Callback to submit profile and generate investment data (no changes to investment logic)
