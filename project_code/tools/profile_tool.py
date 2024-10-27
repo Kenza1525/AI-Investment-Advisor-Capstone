@@ -27,6 +27,9 @@ class UserProfile:
             return risk_categories["Moderate"]
         elif self.risk_tolerance == "Aggressive":
             return risk_categories["Aggressive"]
+        else:
+            print(f"Unexpected risk tolerance value: {self.risk_tolerance}")  # For debugging
+            return ["bonds"]
 
     def categorize_investments(self):
         # Get the recommended asset categories based on the risk profile
