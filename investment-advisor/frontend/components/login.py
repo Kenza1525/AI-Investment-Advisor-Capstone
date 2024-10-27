@@ -1,18 +1,21 @@
 # frontend/components/login.py
-
 from dash import html, dcc
-import dash_bootstrap_components as dbc
 
-# Layout for login page
-layout = html.Div(
+login_layout = html.Div(
     className="d-flex justify-content-center align-items-center",
     style={"minHeight": "100vh"},
     children=[
         html.Div(
             className="login-container",
             children=[
-                html.H1("NexusWealth AI", className="title"),
-                html.P("Intelligent Investment Solutions", className="subtitle"),
+                html.H1(
+                    "NexusWealth AI",
+                    className="title",
+                ),
+                html.P(
+                    "Intelligent Investment Solutions",
+                    className="subtitle",
+                ),
                 html.Div(
                     className="input-group",
                     children=[
@@ -37,19 +40,32 @@ layout = html.Div(
                 ),
                 html.Div(
                     className="button-container",
+                    style={
+                        "display": "flex",
+                        "justifyContent": "space-between",
+                        "gap": "10px",
+                        "width": "100%"
+                    },
                     children=[
                         html.Button(
                             "Login",
                             id="login-button",
-                            className="login-btn"
+                            className="login-btn",
+                            style={"flex": "1"}
                         ),
-                        html.Button(
-                            "Sign Up",
-                            id="signup-button",
-                            className="signup-btn"
+                        html.A(
+                            html.Button(
+                                "Sign Up",
+                                id="signup-button",
+                                className="signup-btn",
+                                style={"flex": "1", "width": "100%"}
+                            ),
+                            href="/signup",
+                            style={"flex": "1", "textDecoration": "none"}
                         )
                     ]
-                )
+                ),
+                html.Div(id="login-feedback", className="subtitle", style={"marginTop": "20px"})
             ]
         )
     ]

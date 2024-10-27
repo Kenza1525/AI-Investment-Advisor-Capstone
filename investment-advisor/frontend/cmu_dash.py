@@ -9,12 +9,13 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import dash
 from dash import html, dcc
 import dash_bootstrap_components as dbc
-from frontend.components import login, signup
+from frontend.components.login import login_layout
+from frontend.components.signup import signup_layout
 
 # Initialize the app
 app = dash.Dash(__name__, suppress_callback_exceptions=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
-# Customizing the HTML structure for the app, using your provided template
+# Customizing the HTML structure for the app
 app.index_string = '''
 <!DOCTYPE html>
 <html>
@@ -84,7 +85,7 @@ app.index_string = '''
                 font-weight: 600;
                 cursor: pointer;
                 transition: all 0.3s ease;
-                width: 100%;
+                width: 48%;
                 border: none;
             }
             .login-btn {
@@ -131,9 +132,11 @@ app.layout = html.Div(
 )
 def display_page(pathname):
     if pathname == "/signup":
-        return signup.layout
+        return signup_layout
+    elif pathname == "/login" or pathname == "/":
+        return login_layout  # Default to login page
     else:
-        return login.layout  # Default to login page
+        return html.Div("404 - Page not found", style={'color': 'white', 'text-align': 'center', 'margin-top': '50px'})
 
 # Running the app
 if __name__ == "__main__":
