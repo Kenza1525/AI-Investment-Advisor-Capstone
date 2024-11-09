@@ -1,23 +1,3 @@
-// window.mountChainlitWidget({
-//   chainlitServer: "http://localhost:8000",
-// });
-
-// window.addEventListener("chainlit-call-fn", (e) => {
-//   const { name, args, callback } = e.detail;
-//   if (name === "formfill") {
-//     console.log(name, args);
-//     dash_clientside.set_props("fieldA", {value: args.fieldA});
-//     dash_clientside.set_props("fieldB", {value: args.fieldB});
-
-//   } 
-//   else if (name === "investment_distribution") {
-//     console.log(name, args);
-//     dash_clientside.set_props("investment-data", {data: args});
-//     callback("Investment distribution updated");
-//   }
-// });
-
-
 window.mountChainlitWidget({
   chainlitServer: "http://localhost:8000",
 });
@@ -35,5 +15,8 @@ window.addEventListener("chainlit-call-fn", (e) => {
     }
     dash_clientside.set_props("profile-data", {data: args});
     callback("Profile information updated");
+  } else if (name === "forecast-data") {
+    dash_clientside.set_props("forecast-data", {data: args});
+    callback("Forecast data updated");
   }
 });
