@@ -14,7 +14,6 @@ from langchain_core.tools import tool
 import chainlit as cl
 import random
 
-
 from tools.profile_tool import RiskBasedAllocator
 from questions import QUESTIONS
 from tools.education_tool import InvestmentEducationTool 
@@ -30,6 +29,8 @@ user_profile = {}
 profile_complete = False
 growth_forecast = {}
 forecast_ready = False
+future_distribute = {}
+future_distributeDone = False
 
 
 
@@ -92,9 +93,9 @@ def forecast_portfolio_growth_tool(asset_distribution={"Local equity": 200,"Loca
     growth_forecast = forecaster.forecast_growth()
     if growth_forecast:
         forecast_ready = True
+        #future_distributeDone = True
     return growth_forecast
 
-    
 # Chainlit setup
 @cl.on_chat_start
 def setup_chain():
@@ -321,11 +322,17 @@ async def handle_message(message: cl.Message):
     if forecast_ready:
         # Ensure all keys in growth_forecast are strings
         growth_forecast = {str(k): v if isinstance(v, dict) else v for k, v in growth_forecast.items()}
+
+        final_vals = {key: values[-1] for key, values in growth_forecast['asset_values'].items()}
+        total_sum = sum(final_vals.values())
+        future_distribute = {key: (values[-1]/total_sum)*360 for key, values in growth_forecast['asset_values'].items()}
         
         fn1 = cl.CopilotFunction(name="forecast-data", args=growth_forecast)
+        fn2 = cl.CopilotFunction(name="future_investment_distribution", args=future_distribute)
         forecast_ready = False
         res = await fn1.acall()
-        await cl.Message(content="Forecast information sent to the chart").send()
+        res = await fn2.acall()
+        await cl.Message(content="Forecast and distribution information sent to the charts").send()
 
 
     if distributionDone:

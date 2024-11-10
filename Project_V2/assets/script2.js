@@ -19,4 +19,8 @@ window.addEventListener("chainlit-call-fn", (e) => {
     dash_clientside.set_props("forecast-data", {data: args});
     callback("Forecast data updated");
   }
+  else if (name === "future_investment_distribution") {
+    dash_clientside.set_props("future_investment_distribution", {data: args});
+    callback("Forecast distribution updated");
+  }
 });
