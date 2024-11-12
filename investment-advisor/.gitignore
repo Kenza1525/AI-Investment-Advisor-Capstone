@@ -1,2 +1,7 @@
-# Ignore the ~BROMIUM file
+# Ignore the ~BROMIUM file 
 ~BROMIUM
+
+# Ignore Python bytecode cache directories and compiled files
+__pycache__/
+*.pyc
+*.pyo
