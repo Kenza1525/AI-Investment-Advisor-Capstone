@@ -1,0 +1,56 @@
+
+Currency Derivatives (Forex)
+Overview
+This module is an educational module on currency derivatives and will also give you an overview of the forex market.​
+Forex trading is trading currencies, and there are two ways to do this:​
+
+The first is trading via currency derivative​
+The second is via the Foreign Exchange spot market ​
+
+​
+Please note that the JSE does not trade forex but rather currency derivatives. There are authorized dealers when it comes to trading forex and these are the institutions you would approach for this service.
+
+Forex Overview
+As a result of global trade and travel, it is common for the currency from one country to be exchanged for another country’s currency. This is done in order to facilitate cross border trade or investment.​
+​
+Foreign exchange is also commonly referred to as Forex or FX and is by far the largest financial market in the world. Although it is big, this market carries some real risks because of its high gearing/leverage. You can both make and lose a lot of money when investing in this market. ​
+​
+An interesting fact though is that the FX market is not physically housed in an actual central building of a country, but instead exists as a network of financial institutions connected to each other via various trading and communication platforms which allows for transacting with each other. In fact, in today’s connected world, anyone who has access to a computer and an online brokerage account can access this market with great ease.
+
+Currency Derivatives Overview
+The JSE’s Currency Derivatives Market trades in Currency Derivates which are regulated products that give you the chance to make  a profit by predicting on whether or not the rand will be strengthening or weakening against another currency, including: ​
+
+United States dollar (USD - $)​
+Euro (EUR - €)​
+British pound (GBP - £)​
+Australian dollar (AUD – $)​
+Japanese yen (JPY - ¥)​
+Chinese renminbi (CNY - ¥)​
+Swiss franc (CHF – Fr)​
+Botswana pula (BWP – P)​
+New Zealand dollar (NZD - $​)
+Canadian dollar (CAD - $)​
+
+​
+Trading on the Currency Derivatives market gives investors the opportunity to:​
+Hedge against currency risk​
+Diversify internationally ​
+Take a view on the movement of underlying foreign exchange rates 
+
+Currency Futures
+A Currency Futures (CFs) Contract is an agreement between parties that gives the investor the right to buy or sell currency at a fixed exchange rate at a specific date in the future. In the contract, one party agrees to buy (longs) the Future at a specified exchange rate and the other party agrees to sell (shorts) it at the expiry date of the contract. When the contract expires, they are settled in cash and do not involve the physical delivery of foreign currency from one person to another. ​
+​
+The underlying tool used in a CF contract is the rate of exchange between one unit of the foreign currency and the South African Rand.
+
+Currency Futures Example
+For example, let's say that the Rand is sitting at R15 per US Dollar at the beginning of the year and you buy $1000. You predict that during the year, the Rand is going to strengthen in value against the Dollar to R10 per US Dollar. You enter into a CF Contract to sell your $1000 at the end of the year for R20,00 per Dollar.​
+​
+By the time the contract expired, the Rand had weakened to R17,50 per Dollar. Even through your prediction was wrong, you still set the selling price per Dollar at a higher amount than the market selling price and still manage to make some income from the contract.
+
+Currency Options
+A Currency Options (CO) Contract is an agreement that gives investors the right, but not the obligation, to buy or sell a Currency Futures Contract on a future date at a pre-set price. COs give investors the right to buy the underlying Currency Future whilst Put Options give them the right to sell it. ​
+​
+Investors are required to pay a premium for choice to exercise the Option or not. The premium is calculated based on the volatility of the underlying exchange rate defined in the CO. 
+
+
+
