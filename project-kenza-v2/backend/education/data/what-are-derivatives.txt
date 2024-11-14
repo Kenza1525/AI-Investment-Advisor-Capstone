@@ -1,0 +1,39 @@
+
+What are Derivatives?​
+Overview
+In this module we are going to uncover derivatives and understand what these tools are and why people make use of them.​
+​
+Understanding derivatives will provide you with a foundation to grasp futures and options which will be expanded on in separate modules.
+
+Defining Derivatives
+A derivative can be summed up as a tradable instrument in its own right. In other words, something you can buy or sell on its own, the price of which is tied to some other underlying reference instrument or security. Common underlying instruments include currencies, bonds, commodities, interest rates, market indices, and shares. ​
+​
+Derivatives form part of advanced investing. Essentially, a derivative is a secondary security whose value is only based (derived) on the value of the main security that it is linked to. Having a derivative gives you access to the main asset without actually owning it. Futures contracts, forward contracts, and options are commonly used derivatives.​
+​
+A futures contract, for example, is affected by the performance of the underlying asset and is therefore a derivative. In the same way, a share option is a derivative because its value is as a result of the underlying share. As mentioned above, while a derivative's value is based on an asset, owning a derivative doesn't mean you own the asset.
+
+Functions of Derivatives
+Derivatives are very efficient tools used by market participants to manage their risk or as a way in which to obtain a desired exposure in the actual underlying instrument or market. ​
+​
+The two main functions of derivatives are: ​
+
+Risk Management – Using derivatives to protect against possible hostile market movements. ​
+Trading – Using derivatives to express a directional trade or exposure via the use of leverage.​
+
+The concept of “the price being tied to some underlying security” will also be explained in more detail below. 
+Let’s look at an example of how derivatives are used to lessen risk: ​
+A German beer garden expects a nice hot week ahead. They are also quite familiar with how many pints of beer are consumed when the weather is nice and hot. ​
+Looking at the expected forecast they are set to sell around 1,000 pints of beer. 
+However, the owner of the beer garden is also aware of the risk they face should temperatures not be as high as originally expected. He is far too familiar with the fact that when it is wet and cold, people tend to stay inside and drink hot beverages like coffee or tea, and will not want to come out to his beer garden for beers. 
+As it turned out, the following week was one of the coldest summer weeks in history. ​
+As one can imagine, selling only 357 pints of beer, when the business was banking on selling 1,000 is a big problem for the owner. ​
+To manage this risk of lower sales should the temperature be less than the average expected, the beer garden owner entered into a weather derivative contract where for every degree the actual temperature falls below the average expected temperature, the derivative contract will compensate the beer garden owner with a pre-determined cash payment. 
+In summary, even though the beer garden owner had lower sales, the weather derivative kicked in a cash payment on all the days where the temperature fell below the expected temperature, and in doing so increased the overall income received over this period, resulting in the beer garden owner staying in business. 
+​
+It is evident then that due to the existence of derivatives the beer garden owner was able to indeed lessen the risk and ensure that the business remains viable. 
+​
+What is also evident in this example is the fact that the “price” i.e. the pay-out on the part of the derivative, was based upon something else. In our example it was temperature. In other words, the weather derivative’s price was based upon another underlying instrument (in this case the actual temperature). ​
+If the market for derivatives did not exist, can you begin to imagine how difficult it would be for this business owner to mitigate this risk? Once again, the availability of derivatives allows for a very efficient risk management process. Arguably a significant benefit exists for the owner to manage risk inherent in his business. 
+
+
+
