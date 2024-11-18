@@ -109,6 +109,14 @@ class AdvisorApp:
             return True, score
         return False, 0
 
+    async def update_chart(self, chart_data: dict):
+        """Update the chart visualization in the dashboard"""
+        try:
+            copilot = cl.CopilotFunction(name="update_chart", args=chart_data)
+            await copilot.acall()
+        except Exception as e:
+            print(f"Error updating chart: {str(e)}")
+
     async def calculate_and_show_profile(self):
         """Calculate risk profile and show results"""
         try:
@@ -129,14 +137,12 @@ class AdvisorApp:
 
                     # Prepare chart data for JavaScript
                     chart_data = {
-                        "allocation": allocation
+                        "profile": profile,
+                        "allocation": allocation,
+                        "score": score
                     }
 
-                    # Send chart data to frontend
-                    await cl.Message(content=response).send()
-                    
-                    # Use Chainlit's built-in functions to send data to frontend
-                    await cl.make_async_call("update_chart", chart_data)
+                    await self.update_chart(chart_data)
                     
                     # Ask for next action
                     await cl.Message(
