@@ -1,47 +1,157 @@
 import sqlite3
+import json
 
-DATABASE = 'user_profiles.db'
 
-# Function to initialize the database and create tables if they don't exist
-def init_db():
-    conn = sqlite3.connect(DATABASE)
-    c = conn.cursor()
-    # Create table if it doesn't exist
-    c.execute('''
-        CREATE TABLE IF NOT EXISTS profiles (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT UNIQUE,
-            age INTEGER,
-            education TEXT,
-            investment_length TEXT,
-            investment_goal TEXT,
-            risk_tolerance TEXT
-        )
-    ''')
-    conn.commit()
-    conn.close()
+class UserProfileDatabase:
+    DATABASE = 'user_info.db'
 
-# Function to insert a new user profile into the database
-def insert_profile(name, age, education, investment_length, investment_goal, risk_tolerance):
-    conn = sqlite3.connect(DATABASE)
-    c = conn.cursor()
-    try:
-        c.execute('''
-            INSERT INTO profiles (name, age, education, investment_length, investment_goal, risk_tolerance)
-            VALUES (?, ?, ?, ?, ?, ?)
-        ''', (name, age, education, investment_length, investment_goal, risk_tolerance))
-        conn.commit()
-        success = True
-    except sqlite3.IntegrityError:  # Handles duplicate profile insertion
-        success = False
-    conn.close()
-    return success
+    def __init__(self):
+        self._initialize_database()
 
-# Function to query profiles (optional, for later use)
-def query_profiles():
-    conn = sqlite3.connect(DATABASE)
-    c = conn.cursor()
-    c.execute('SELECT * FROM profiles')
-    rows = c.fetchall()
-    conn.close()
-    return rows
+    def _initialize_database(self):
+        """Initialize the database and create the profiles table if it doesn't exist."""
+        with sqlite3.connect(self.DATABASE) as conn:
+            c = conn.cursor()
+            c.execute('''
+                CREATE TABLE IF NOT EXISTS profiles (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    name TEXT UNIQUE,
+                    age INTEGER,
+                    job TEXT,
+                    phone TEXT,
+                    email TEXT,
+                    investment_amount INTEGER,
+                    time_horizon INTEGER,
+                    current_portfolio TEXT,
+                    risk_tolerance TEXT
+                )
+            ''')
+            conn.commit()
+
+    def create_profile(self, profile_data):
+        """
+        Insert a new user profile into the database.
+        :param profile_data: Dictionary containing the profile fields and values.
+        """
+        with sqlite3.connect(self.DATABASE) as conn:
+            c = conn.cursor()
+            try:
+                # Extract values from the dictionary
+                c.execute('''
+                    INSERT INTO profiles (
+                        name, age, job, phone, email, investment_amount, time_horizon, current_portfolio, risk_tolerance
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ''', (
+                    profile_data.get("name"),
+                    profile_data.get("age"),
+                    profile_data.get("job"),
+                    profile_data.get("phone"),
+                    profile_data.get("email"),
+                    profile_data.get("investment_amount"),
+                    profile_data.get("time_horizon"),
+                    json.dumps(profile_data.get("current_portfolio")),
+                    profile_data.get("risk_tolerance")
+                ))
+                conn.commit()
+                return c.lastrowid  # Return the ID of the newly created profile
+            except sqlite3.IntegrityError:
+                return None  # Indicates a failure to create due to a duplicate name
+
+    def read_profiles(self):
+        """Retrieve all user profiles."""
+        with sqlite3.connect(self.DATABASE) as conn:
+            c = conn.cursor()
+            c.execute('SELECT * FROM profiles')
+            profiles = c.fetchall()
+            return [self._deserialize_profile(profile) for profile in profiles]
+
+    def read_profile_by_name(self, name):
+        """Retrieve a user profile by name."""
+        with sqlite3.connect(self.DATABASE) as conn:
+            c = conn.cursor()
+            c.execute('SELECT * FROM profiles WHERE name = ?', (name,))
+            profile = c.fetchone()
+            return self._deserialize_profile(profile) if profile else None
+
+    def update_profile(self, name, **updates):
+        """
+        Update an existing user profile.
+        :param name: The unique name of the profile to update.
+        :param updates: The fields to update as keyword arguments.
+        """
+        with sqlite3.connect(self.DATABASE) as conn:
+            c = conn.cursor()
+            if "current_portfolio" in updates:
+                updates["current_portfolio"] = json.dumps(updates["current_portfolio"])
+            fields = ', '.join(f"{key} = ?" for key in updates.keys())
+            values = list(updates.values()) + [name]
+            c.execute(f'''
+                UPDATE profiles
+                SET {fields}
+                WHERE name = ?
+            ''', values)
+            conn.commit()
+            return c.rowcount  # Returns the number of rows updated
+
+    def delete_profile(self, name):
+        """Delete a user profile by name."""
+        with sqlite3.connect(self.DATABASE) as conn:
+            c = conn.cursor()
+            c.execute('DELETE FROM profiles WHERE name = ?', (name,))
+            conn.commit()
+            return c.rowcount  # Returns the number of rows deleted
+
+    def _deserialize_profile(self, profile):
+        """Convert serialized fields back to their original types."""
+        if profile:
+            profile = list(profile)
+            profile[8] = json.loads(profile[8]) if profile[8] else None  # Deserialize current_portfolio
+        return tuple(profile) if profile else None
+
+
+# Testing the class
+if __name__ == "__main__":
+    db = UserProfileDatabase()
+
+    # Create a profile
+    print("Creating profile...")
+    profile_data = {
+        "name": "John Doe",
+        "age": 30,
+        "job": "Engineer",
+        "phone": "123-456-7890",
+        "email": "johndoe@example.com",
+        "investment_amount": 5000,
+        "time_horizon": 10,
+        "current_portfolio": {"stocks": 70, "bonds": 30},
+        "risk_tolerance": "Moderate"
+    }
+    db.create_profile(profile_data)
+
+    # Output after insertion
+    print("\nAll profiles:")
+    profiles = db.read_profiles()
+    print(profiles)
+
+    # Read single profile
+    print("\nReading profile by name:")
+    profile = db.read_profile_by_name("John Doe")
+    print(profile)
+
+    # Update profile
+    print("\nUpdating profile...")
+    db.update_profile("John Doe", age=31, investment_amount=5500, current_portfolio={"stocks": 75, "bonds": 25})
+
+    # Verify update
+    print("\nProfile after update:")
+    profile = db.read_profile_by_name("John Doe")
+    print(profile)
+
+    # Delete profile
+    print("\nDeleting profile...")
+    db.delete_profile("John Doe")
+
+    # Verify deletion
+    print("\nAll profiles after deletion:")
+    profiles = db.read_profiles()
+    print(profiles)
