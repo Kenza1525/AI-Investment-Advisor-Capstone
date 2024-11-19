@@ -1,34 +1,143 @@
-// Mount Chainlit widget
+// Constants
+const COLORS = {
+    'Local equity': '#FF6B6B',    // Red
+    'Local bonds': '#FFD700',     // Yellow
+    'Local cash': '#8A2BE2',      // Purple
+    'Global assets': '#96CEB4'    // Green
+};
+
+const CHART_CONFIG = {
+    allocation: {
+        height: 450,
+        width: 600,
+        title: 'Portfolio Allocation'
+    },
+    forecast: {
+        line: {
+            height: 400,
+            width: 700,
+            title: 'Portfolio Growth Projection'
+        },
+        pie: {
+            height: 400,
+            width: 700,
+            title: 'Final Portfolio Distribution'
+        }
+    }
+};
+
+// Initialize Chainlit widget
 window.mountChainlitWidget({
     chainlitServer: "http://localhost:8000"
 });
 
-// Handle Chainlit function calls
+// Event Listeners
 window.addEventListener("chainlit-call-fn", (e) => {
     const { name, args, callback } = e.detail;
     
-    switch(name) {
-        case "update_personal_info":
+    const handlers = {
+        'update_personal_info': () => {
             updatePersonalInfo(args);
             callback("Personal information updated");
-            break;
-        
-        case "update_allocation_chart":
+        },
+        'update_allocation_chart': () => {
             updateAllocationChart(args);
             callback("Allocation chart updated");
-            break;
-            
-        case "update_forecast_charts":
+        },
+        'update_forecast_charts': () => {
             updateForecastCharts(args);
             callback("Forecast charts updated");
-            break;
-    }
+        }
+    };
+
+    handlers[name]?.();
 });
 
-// Function to update personal information fields
+// Utility Functions
+function getColorForAsset(assetName) {
+    return COLORS[assetName] || '#CCCCCC';
+}
+
+function formatCurrency(value) {
+    return new Intl.NumberFormat('en-ZA', {
+        style: 'currency',
+        currency: 'ZAR'
+    }).format(value);
+}
+
+function formatNumber(value, decimals = 2) {
+    return new Intl.NumberFormat('en-ZA', {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+    }).format(value);
+}
+
+// Chart Creation Functions
+function createPieChart(data, elementId, config) {
+    const chartData = [{
+        values: Object.values(data),
+        labels: Object.keys(data),
+        type: 'pie',
+        hole: 0.4,
+        marker: {
+            colors: Object.keys(data).map(asset => getColorForAsset(asset))
+        },
+        textinfo: 'label+percent',
+        hoverinfo: 'label+value+percent'
+    }];
+
+    const layout = {
+        title: config.title,
+        height: config.height,
+        width: config.width,
+        showlegend: true,
+        legend: {
+            x: 1.1,
+            y: 0.5
+        },
+        margin: { t: 50, b: 50, l: 20, r: 20 }
+    };
+
+    Plotly.newPlot(elementId, chartData, layout);
+}
+
+function createLineChart(data, years, elementId, config) {
+    const lineData = Object.entries(data).map(([assetClass, values]) => ({
+        x: years,
+        y: values,
+        name: assetClass,
+        type: 'scatter',
+        mode: 'lines+markers',
+        marker: { size: 8 },
+        line: { color: getColorForAsset(assetClass) }
+    }));
+
+    const layout = {
+        title: config.title,
+        height: config.height,
+        width: config.width,
+        xaxis: {
+            title: 'Years',
+            showgrid: true
+        },
+        yaxis: {
+            title: 'Value',
+            showgrid: true
+        },
+        showlegend: true,
+        legend: {
+            x: 1,
+            xanchor: 'right',
+            y: 1
+        }
+    };
+
+    Plotly.newPlot(elementId, lineData, layout);
+}
+
+// Main Update Functions
 function updatePersonalInfo(data) {
     try {
-        // Map data fields to form inputs
         const fieldMapping = {
             fullName: 'personal-name',
             job: 'personal-job',
@@ -39,7 +148,6 @@ function updatePersonalInfo(data) {
             time_horizon: 'investment-horizon'
         };
 
-        // Update each field
         Object.entries(fieldMapping).forEach(([dataKey, elementId]) => {
             if (data[dataKey] !== undefined) {
                 dash_clientside.set_props(elementId, {value: data[dataKey]});
@@ -50,145 +158,47 @@ function updatePersonalInfo(data) {
     }
 }
 
-// Function to update the allocation pie chart
 function updateAllocationChart(data) {
     try {
         const { allocation } = data;
+        if (!allocation) throw new Error("Missing allocation data");
         
-        if (!allocation) {
-            throw new Error("Missing allocation data");
-        }
-
-        const pieData = [{
-            values: Object.values(allocation),
-            labels: Object.keys(allocation),
-            type: 'pie',
-            hole: 0.4,
-            marker: {
-                colors: [
-                    '#FF6B6B',  // Local equity
-                    '#4ECDC4',  // Local bonds
-                    '#45B7D1',  // Local cash
-                    '#96CEB4'   // Global assets
-                ]
-            },
-            textinfo: 'label+percent',
-            hoverinfo: 'label+value+percent'
-        }];
-
-        const layout = {
-            title: 'Portfolio Allocation',
-            height: 400,
-            width: 600,
-            showlegend: false,
-            margin: { t: 50, b: 0, l: 0, r: 0 }
-        };
-
-        Plotly.newPlot('allocation-chart', pieData, layout);
-
+        createPieChart(allocation, 'allocation-chart', CHART_CONFIG.allocation);
     } catch (error) {
         console.error("Error updating allocation chart:", error);
     }
 }
 
-// Function to update forecast charts
 function updateForecastCharts(data) {
     try {
         const { lineChart, finalPieChart } = data;
         
-        // Create line chart for growth projection
-        const lineData = [];
-        Object.entries(lineChart.asset_values).forEach(([assetClass, values], index) => {
-            lineData.push({
-                x: lineChart.years,
-                y: values,
-                name: assetClass,
-                type: 'scatter',
-                mode: 'lines+markers',
-                marker: {
-                    size: 8
-                }
-            });
-        });
+        // Create line chart
+        createLineChart(
+            lineChart.asset_values,
+            lineChart.years,
+            'forecast-line-chart',
+            CHART_CONFIG.forecast.line
+        );
 
-        const lineLayout = {
-            title: 'Portfolio Growth Projection',
-            xaxis: {
-                title: 'Years',
-                showgrid: true
-            },
-            yaxis: {
-                title: 'Value',
-                showgrid: true
-            },
-            height: 400,
-            width: 800,
-            showlegend: true,
-            legend: {
-                x: 1,
-                xanchor: 'right',
-                y: 1
-            }
-        };
+        // Create pie chart
+        createPieChart(
+            finalPieChart,
+            'forecast-pie-chart',
+            CHART_CONFIG.forecast.pie
+        );
 
-        // Create pie chart for final allocation
-        const pieData = [{
-            values: Object.values(finalPieChart),
-            labels: Object.keys(finalPieChart),
-            type: 'pie',
-            hole: 0.4,
-            marker: {
-                colors: [
-                    '#FF6B6B',  // Local equity
-                    '#4ECDC4',  // Local bonds
-                    '#45B7D1',  // Local cash
-                    '#96CEB4'   // Global assets
-                ]
-            },
-            textinfo: 'label+percent',
-            hoverinfo: 'label+value+percent'
-        }];
-
-        const pieLayout = {
-            title: 'Final Portfolio Distribution',
-            height: 400,
-            width: 600,
-            showlegend: false,
-            margin: { t: 50, b: 0, l: 0, r: 0 }
-        };
-
-        // Plot both charts
-        Plotly.newPlot('forecast-line-chart', lineData, lineLayout);
-        Plotly.newPlot('forecast-pie-chart', pieData, pieLayout);
-
-        // Store forecast data for reference
+        // Store forecast data
         const storageDiv = document.getElementById('forecast-data-storage');
         if (storageDiv) {
             storageDiv.textContent = JSON.stringify(data);
         }
-
     } catch (error) {
         console.error("Error updating forecast charts:", error);
     }
 }
 
-// Function to format currency values
-function formatCurrency(value) {
-    return new Intl.NumberFormat('en-ZA', {
-        style: 'currency',
-        currency: 'ZAR'
-    }).format(value);
-}
-
-// Function to handle number formatting
-function formatNumber(value, decimals = 2) {
-    return new Intl.NumberFormat('en-ZA', {
-        minimumFractionDigits: decimals,
-        maximumFractionDigits: decimals
-    }).format(value);
-}
-
-// Function to create custom legends
+// Legend Creation
 function createCustomLegend(elementId, data) {
     const legendContainer = document.getElementById(elementId);
     if (!legendContainer) return;
@@ -202,15 +212,4 @@ function createCustomLegend(elementId, data) {
             </div>
         `)
         .join('');
-}
-
-// Helper function to get consistent colors for assets
-function getColorForAsset(assetName) {
-    const colorMap = {
-        'Local equity': '#FF6B6B',
-        'Local bonds': '#4ECDC4',
-        'Local cash': '#45B7D1',
-        'Global assets': '#96CEB4'
-    };
-    return colorMap[assetName] || '#CCCCCC';
 }

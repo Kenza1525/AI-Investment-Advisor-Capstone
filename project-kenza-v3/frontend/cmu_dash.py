@@ -151,15 +151,13 @@ def create_allocation_content():
                 # Growth Projection
                 html.Div(className="forecast-section", children=[
                     html.H3("Growth Projection", className="section-subtitle"),
-                    html.Div(id="forecast-line-chart", className="forecast-chart")
+                    html.Div(id="forecast-line-chart")
                 ]),
-                # Final Distribution
+                # Final Distribution (separate box)
                 html.Div(className="forecast-section", children=[
                     html.H3("Final Portfolio Distribution", className="section-subtitle"),
-                    html.Div(id="forecast-pie-chart", className="forecast-chart")
-                ]),
-                # Summary
-                html.Div(id="forecast-summary", className="forecast-summary")
+                    html.Div(id="forecast-pie-chart")
+                ])
             ])
         ]
     )

@@ -107,43 +107,40 @@ body {
 }
 
 /* Asset Allocation Layout */
+
+
 .allocation-container {
     display: grid;
-    grid-template-columns: 450px 1fr;
-    gap: 2rem;
-    padding: 1rem;
+    grid-template-columns: 700px 900px; /* Adjust both columns to equal width */
+    gap: 3rem; /* Maintain spacing between sections */
+    padding: 2rem;
     height: calc(100vh - 4rem);
     overflow-y: auto;
 }
 
+
 .left-panel {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-}
-
-.personal-info-section {
-    background: var(--card-bg);
-    border-radius: 15px;
-    padding: 2rem;
+    gap: 3rem; /* Increased gap between sections */
 }
 
 .portfolio-section {
     background: var(--card-bg);
     border-radius: 15px;
     padding: 2rem;
-    height: 400px;
-    margin-top: auto;
+    height: 600px; /* Maintain this height */
+    width: 100%; /* Ensure it takes full width of the left panel */
+    grid-column: span 2; /* Add this to make it span across both columns */
+    margin-top: 2rem;
 }
 
 .right-panel {
-    background: var(--card-bg);
-    border-radius: 15px;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    width: 100%;
+    max-width: 800px; /* Control maximum width */
 }
+
+
 
 /* Form Styling */
 .form-container {
@@ -189,7 +186,7 @@ body {
 }
 
 .forecast-section {
-    height: 350px;
+    height: 500px;
     background: rgba(25, 25, 25, 0.7);
     border-radius: 15px;
     padding: 1.5rem;
@@ -210,21 +207,37 @@ body {
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .feature-card {
     background: var(--card-bg);
     border: 1px solid var(--border-light);
     border-radius: 12px;
-    padding: 1.5rem;
+    padding: 2rem;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .feature-card:hover {
     border-color: var(--primary-gradient-start);
-    box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.15);
+    transform: translateY(-5px);
+}
+
+.feature-card .card-title {
+    font-family: 'Righteous', cursive;
+    font-size: 1.5rem;
+    color: var(--primary-gradient-start);
+    margin-bottom: 1rem;
+}
+
+.feature-card .card-text {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.5;
 }
 
 /* Responsive Design */
