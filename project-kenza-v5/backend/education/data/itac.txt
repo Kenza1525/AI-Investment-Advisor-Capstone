@@ -1,0 +1,477 @@
+
+ITaC
+Overview
+The ITaC project was successfully implemented into production on Monday, 29 April 2019.
+“ITaC” is the abbreviation used for the JSE’s Integrated Trading and Clearing initiative. The ITaC project is a multi‐year programme of work focused on the introduction of an integrated solution for the JSE’s trading and clearing services. 
+The objective of the project is to implement world‐class, multi‐product solutions to enhance the JSE’s current trading and clearing functions: on the trading ​side, that means migrating all Derivatives and Cash Bond markets to the MillenniumIT trading platform, while for clearing, it involves the migration of all markets onto the new Cinnober Real‐Time Clearing (RTC) solution.
+The implementation of ITaC will bring a host of changes to JSE’s Trading, Clearing and Market Data services, in an effort to align the JSE with international best practice and to ensure that they leverage the benefits of their new technology platforms.
+Daily Trading Lifecycle 
+
+EDM & FXM 
+These orders are applicable for all trading sessions.
+
+
+
+
+
+
+
+
+
+Order Types​
+
+
+Definition​
+
+
+
+
+Limit Order (LO)​
+
+
+Limit Orders stipulate both Volume and Limit Price. A Limit Order may execute atprices equal to or better than its Limit Price. ​
+
+
+
+
+Stop Limit Order (SL)​
+
+
+A Stop Limit Order is a Limit Order that will remain unelected, that is, withoutentering the Order Book, until the Stop Price is reached. ​
+
+
+
+
+ 
+Time in Force (TIF)
+This is a special instruction that is used when placing an order to indicate how long an order will remain active before it is executed, expired, or deleted 
+Some of the actions may not be applicable to your firm. Check with your software provider what is applicable to your firm 
+
+ 
+
+
+
+
+
+
+
+
+
+Time in Force (TIF)​
+
+
+Definition​
+
+
+
+
+OPG​
+
+
+At the Opening - direct orders to the Opening Auction ​
+
+
+
+
+GFA​
+
+
+Good for Auction - direct orders to the next Auction ​
+
+
+
+
+DAY​
+
+
+Day - orders are valid for the trading day, they expire at Market End ​
+
+
+
+
+IOC​
+
+
+Immediate or Cancel - rejected during Auction Call (excl. Stop/Stop Limit orders) ​
+
+
+
+
+GTD​
+
+
+Good till Date - orders remain for a specified duration, or remain till filled, cancelled or expired ​
+
+
+
+
+FOK​
+
+
+Fill or Kill - orders either fully executed on recipe or expire immediately (excl. Stop/Stop Limit orders) ​
+
+
+
+
+GTC​
+
+
+Good till Cancel - orders with a maximum life of 90 calendar days will remain till filled, cancelled or expired ​
+
+
+
+
+GTT​
+
+
+Good till Time - orders valid till a specified time for the current trading day, format: YYYYMMDD-HH:MM:SS ​
+
+
+
+
+ 
+Trading: Circuit Breakers and Price Bands
+Circuit Breakers 
+
+Applicable for EDM 
+This is the tolerance defined as a percentage in relation to the Static Reference Price and Dynamic Reference Price 
+If the Circuit Breaker is breached this will trigger a Volatility Auction 
+
+
+
+
+
+
+
+
+
+
+
+​
+
+
+Index Futures​
+
+
+
+
+Trading Session ​
+
+
+Static Circuit Breaker % ​
+
+
+Dynamic Circuit Breaker % ​
+
+
+
+
+Continuous Trading ​
+
+
+5%​
+
+
+1%​
+
+
+
+
+Opening Auction Call ​
+
+
+5%​
+
+
+1%​
+
+
+
+
+Volatility Auction Call ​
+
+
+5%​
+
+
+1%​
+
+
+
+
+Re-Opening Auction Call ​
+
+
+5%​
+
+
+1%​
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ ​
+
+
+Single Stock Futures​
+
+
+
+
+Trading Session ​
+
+
+Static Circuit Breaker % ​
+
+
+Dynamic Circuit Breaker % ​
+
+
+
+
+Continuous Trading ​
+
+
+8%​
+
+
+4%​
+
+
+
+
+Opening Auction Call ​
+
+
+8%​
+
+
+4%​
+
+
+
+
+Volatility Auction Call ​
+
+
+8%​
+
+
+4%​
+
+
+
+
+Re-Opening Auction Call ​
+
+
+8%​
+
+
+4%​
+
+
+
+
+Price Bands 
+
+Applicable for FXM 
+This is the tolerance defined as a percentage in relation to the Static Reference Price 
+The price bands limit entry of an order that may breach the thresholds set 
+The price bands do not limit orders that are entered far away from the current market price, only should they aggress the order book and breach the price band 
+
+
+
+
+
+
+
+
+
+
+Currency Derivatives Market​
+
+
+
+
+Price Band Inner Limit % ​
+
+
+4%​
+
+
+
+
+Price Band Inner Limit % ​
+
+
+8%​
+
+
+
+
+
+ 
+
+*Please note that price band percentages are being reviewed 
+
+Trade Reporting
+ 
+
+Branches 
+
+
+If your counterparty is trading within a Branch, please ensure you capture the following information on the trade report: 
+
+Secondary Trade Report ID (Branch code) 
+Your account/client code, e.g. ABC123 
+
+
+
+
+Selection of Trade Type, e.g. Negotiated Trade, Roll Trade, etc. 
+Cannot amend details of any trade report details, instead the member capturing the trade report would need to withdraw the trade before it is accepted or the receiving member will need to reject the trade should it contain incorrect information. 
+
+Please liaise with your Software Provider on how you are setup to trade with a branch 
+Trade Cancellation
+On Book Trades 
+
+JSE Surveillance may instruct a member(s) to cancel a matched trade should the criteria be met to effect such 
+
+Parameters
+
+Request for cancellation must be submitted to Market regulation within 20 minutes of erroneous trade execution 
+Minimum loss potential R50 000 
+
+Off Book Trades 
+
+Off Book trades can be cancelled at the mutual agreement of members 
+Only Same Day cancellations are permitted 
+Next Day cancellations are done through an Equal Opposite reported trade 
+
+Deal management and cancelled trades 
+
+If a trade was deal managed before it was cancelled, the equal and opposite trade created by the cancellation can be deal managed to ‘undo’ the effects of the original trade 
+A same day trade cancellation performed on the Trading System will result in a system generated equal and opposite trade in the Clearing System - It is this equal and opposite trade that can be deal managed to reverse the effects of the original trade 
+For example if the initial trade was allocated to a client account, the equal and opposite trade resulting from the trade cancellation should be allocated to the same client account to ensure a net zero effect on the client’s position 
+
+Can-do Product
+Products
+Changes to Dividend Neutral Futures 
+
+Current system (Nutron) 
+
+Dividend Neutral is a virtual contract. 
+Dividend Neutral (N contract) = SSF(Q) and Dividend Future (F). 
+At Ex Div, the JSE process a Journal transaction on the Dividend Future. 
+
+
+New system (ITaC) 
+
+Dividend Future will no longer exist. 
+Dividend Neutral contract will now be “single” contract. 
+No Journal transaction will be processed on this contract. 
+
+
+
+Reason for removing the virtual Dividend Future: when Members roll over their SSF contracts to the next expiry, they do not always roll the Dividend Future. 
+Live and Non-Live Data
+
+Website based files/reports and market data products available via the JSE FTP server. 
+JSE website reports in PDF format – Public information and in some cases later than the market data products
+JSE will be providing a historical MTM All report in Excel format on the JSE website for Currency Derivatives. This was done due to representations made to JSE to assist with marketing to prospective clients 
+JSE has been providing the new data for quite a while to Information Subscribers during the various test phases and doing right now in end to end testing 
+If you have not yet gained access to your required data, discuss this with your TSP and/or your IT division or contact the JSE 
+	 
+
+New & Changed Services and Functions
+Account Structure
+
+Note: To add a new foreign client Trading Member must capture client details and add a ZAR cash account. A ZAR cash account must also exist for the Trading Member. Thereafter request JSE to enable foreign client. 
+Deal Management: Actions Allowed
+ 
+A deal is one side of a trade i.e. either the buy leg or sell leg of the trade
+
+To enable a Clearing Member to manage reported trades on behalf of a Trading Member each Clearing Member user will be provided with a Trader ID under the Trading Member 
+
+Things To Note
+
+Statistics – Trade vs. Deal Management 
+JSE Support Model 
+Option calculator and Margin calculator 
+Monthly Expiries for EDM will be introduced post ITaC go live 
+
+Instrument Reference Data: New Naming Standards
+Three Instrument Identifiers 
+
+Contract Code (replacing the existing four character code) 
+International Securities Identification Number (ISIN) 
+Unique ID (Numeric) 
+
+New Contract Code standard 
+
+Concatenation of fields e.g. <EXPIRY DATE> <ALPHA CODE> <SETTLEMENT TYPE> <CALL/PUT> <STRIKE> 
+Conventions are available in the Instrument Reference Data Quick Reference Guide 
+
+Examples: 
+
+*Please check with your Software Provider how the instruments will be displayed on their system 
+Instrument Reference Data: Instrument Creation 
+Instruments created intra-day will be disseminated real time
+ 
+* The first Anyday futures contract for any instrument has to be created by the JSE 
+ 
+
+Market Participant Structure: Users
+
+Trader IDs are assigned to all registered Traders , so that they can perform On Book and Reported trading functionality 
+Note: Each Trader must be registered with the JSE per Market. Upon registration, each Trader is assigned a unique 
+Trader ID 5 numeric digits (0-9), submitted on all orders, quotes and trade messages by a Firm to the JSE Trading System
+Where traders have multiple Nutron Logon IDs in the same market today either for the Equity Derivatives Market or Currency Derivatives Market - only one unique Trader ID will be allowed for ITaC
+Clearing Member User IDs are allocated to Clearing Member Users 
+Clearing Member Users are able to report Reported trades to the JSE Trading System 
+They do not, however, have the ability to submit any Orders onto the Central Order Book 
+The JSE Trading System caters for certain Reported trading activity performed by Clearing Member Users On-Behalf-Of Trading Member Firms 
+Back Officer User IDs are allocated to Back Office Users 
+Back Office Users have the ability to report Reported trades to the JSE Trading System 
+Back Office Users do not, however, have the ability to submit any Orders onto the Central Order Book 
+
+ 
+
+Market Participant Structure: On-Behalf-Of CompID and Trader Groups
+
+A clearing member will own and login with a CompID belonging to the trading member firm dedicated as the onbehalf-of CompID
+This CompID will facilitate the trade reporting functionality executed by clearing members or on-behalf-of activity that may be required 
+Without this CompID, a clearing member will not be able to perform reported trade activity
+The CompID is also important for any cancellations and default management activities that need to be performed by the clearing member on behalf of the trading member 
+Trader Groups are available to segregate firms into logical partitions of either type of activity, geographically location etc. 
+A public Trader Group is mandatory for all trading members. This Trader Group will drive how reported trades are initiated. 
+
+The code for these will be ABCXXXPBL01 where ‘ABC’ represents the alpha code of the member 
+These are made available every day in the client reference data files 
+
+
+
+ 
+
+Nutron Decommissioning
+
+
+
+
+
+
+
