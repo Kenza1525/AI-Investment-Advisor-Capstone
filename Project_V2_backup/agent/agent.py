@@ -13,7 +13,6 @@ from langchain_core.messages import AIMessage, HumanMessage
 from langchain_core.tools import tool
 import chainlit as cl
 import random
-import chainlit.data as cl_data
 
 from tools.profile_tool import RiskBasedAllocator
 from questions import QUESTIONS
@@ -21,8 +20,6 @@ from tools.education_tool import InvestmentEducationTool
 from tools.portfolio_forecast import PortfolioForecaster
 import matplotlib.pyplot as plt
 import json
-from datetime import datetime
-from pathlib import Path
 
 load_dotenv()
 chat_history = []
@@ -34,9 +31,6 @@ growth_forecast = {}
 forecast_ready = False
 future_distribute = {}
 future_distributeDone = False
-
-
-feedback_fle = "feedback.jsonl"
 
 
 ACCESS_TOKEN = "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"
@@ -99,56 +93,9 @@ def forecast_portfolio_growth_tool(asset_distribution={"Local equity": 200,"Loca
         #future_distributeDone = True
     return growth_forecast
 
-
-class CustomDataLayer(cl_data.BaseDataLayer):
-
-    async def upsert_feedback(self, feedback) -> str:
-        global feedback_fle, latest_prompt
-
-        # Dictionary to store new feedback
-        new_feedback = {
-            'id': feedback.forId,
-            'user_prompt': latest_prompt,
-            'feedback': feedback.comment,
-            'value': feedback.value
-        } 
-
-        # print feedback 
-
-        print(new_feedback)
-
-        # Add new feedback
-        with open(feedback_fle, "a") as file:
-
-            file.write(json.dumps(new_feedback) + "\n")
-
-    
-    # Stub implementations
-
-    async def build_debug_url(self, *args, **kwargs): pass
-    async def create_element(self, element_dict): pass
-    async def create_step(self, step_dict): pass
-    async def create_user(self, user): pass
-    async def delete_element(self, element_id): pass
-    async def delete_feedback(self, feedback_id): pass
-    async def delete_step(self, step_id): pass
-    async def delete_thread(self, thread_id): pass
-    async def get_element(self, thread_id, element_id): pass
-    async def get_thread(self, thread_id): pass
-    async def get_thread_author(self, thread_id): pass
-    async def get_user(self, user_id): pass
-    async def list_threads(self, pagination, filters): pass
-    async def update_step(self, step_dict): pass
-    async def update_thread(self, thread_id, name=None, user_id=None, metadata=None, tags=None): pass
-
-
-
 # Chainlit setup
 @cl.on_chat_start
 def setup_chain():
-
-    cl_data._data_layer = CustomDataLayer()
-
     llm = ChatOpenAI(openai_api_key="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", model="gpt-3.5-turbo")
     tools = [personalized_advice_tool,investment_education_tool, forecast_portfolio_growth_tool]
     llm_with_tools = llm.bind_tools(tools)
@@ -360,10 +307,8 @@ Return a dictionary with the user's responses to be displayed as a pie chart in 
 
 @cl.on_message
 async def handle_message(message: cl.Message):
-    global investment_distribution, distributionDone, user_profile, profile_complete,forecast_ready, growth_forecast, latest_prompt
-    user_message = message.content.lower()
-
-    latest_prompt = user_message
+    global investment_distribution, distributionDone, user_profile, profile_complete,forecast_ready, growth_forecast
+    user_message = message.content
 
     llm_chain = cl.user_session.get("llm_chain")
 
