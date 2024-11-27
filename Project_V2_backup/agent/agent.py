@@ -12,7 +12,6 @@ from langchain.agents.format_scratchpad.openai_tools import format_to_openai_too
 from langchain_core.messages import AIMessage, HumanMessage
 from langchain_core.tools import tool
 import chainlit as cl
-import chainlit.data as cl_data
 import random
 
 from tools.profile_tool import RiskBasedAllocator
@@ -41,13 +40,13 @@ investment_tool_instance = InvestmentEducationTool(
     api_key="sk-M2Zf8AteM_beMwQ9Q4yfCWNOIOuBf8XtGp4Mbh3Ib-T3BlbkFJ8s1Yat1knh6EdNcnmrqykaPopYeFM5AjEYyn0UyfgA"
 )
 
-
 @tool("InvestmentEducationTool", return_direct=False)
 def investment_education_tool(query: str) -> dict:
     '''Provides educational information about the South African financial market.'''
     # Use the retriever tool to search for information
     retriever_tool = investment_tool_instance.get_tool()
     return retriever_tool({"query": query})
+
 
 @tool("ProfileBasedTool", return_direct=False)
 def personalized_advice_tool(risk_assessment_responses={'question1': 'a','question2': 'b','question3': 'c','question4': 'a','question5': 'b','question6': 'c','question7': 'd','question8': 'a','question9': 'b','question10': 'c','question11': 'd'}) -> dict:
@@ -97,9 +96,6 @@ def forecast_portfolio_growth_tool(asset_distribution={"Local equity": 200,"Loca
 # Chainlit setup
 @cl.on_chat_start
 def setup_chain():
-    cl.set_data_layer(CustomDataLayer())
-    global session_id
-    session_id = str(uuid.uuid4())
     llm = ChatOpenAI(openai_api_key="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", model="gpt-3.5-turbo")
     tools = [personalized_advice_tool,investment_education_tool, forecast_portfolio_growth_tool]
     llm_with_tools = llm.bind_tools(tools)
@@ -313,7 +309,7 @@ Return a dictionary with the user's responses to be displayed as a pie chart in 
 async def handle_message(message: cl.Message):
     global investment_distribution, distributionDone, user_profile, profile_complete,forecast_ready, growth_forecast
     user_message = message.content
-    
+
     llm_chain = cl.user_session.get("llm_chain")
 
     result = llm_chain.invoke({"input": user_message, "chat_history": chat_history})
