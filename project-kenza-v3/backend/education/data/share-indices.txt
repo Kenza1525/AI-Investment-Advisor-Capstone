@@ -1,0 +1,48 @@
+
+Share Indices
+Overview
+The market is up, the market is down. Everyday we hear about the shares market on the news, radio, and in the paper. ​
+​
+What does it mean when they say: "The market turned in a great performance today"? What is "The Market" anyway? It turns out that most of the time when people are talking about "The Market" they are referring to an index. ​
+​
+With the growing importance of the shares market in our society, indices like the FTSE/ JSE All Share, DJIA, S&P 500, and Nasdaq combined have grown to become a part of our everyday vocabulary.​
+​
+In this module we're going to cover what an index is, go through some of the major share indices, and find out how we can invest in the share market using index funds.
+
+What is an Index?
+The basic definition of an index is that it is a guide or benchmark to how the market is performing.​
+​
+It would be too difficult to try and track every single security trading in the country. To get around this, we take a smaller sample of the market that represents the entire market. ​
+​
+Thus, just as pollsters use political surveys to measure the sentiment of the population, investors use indices to track the performance of the share market. Ideally a change in the price of an index would represent an exactly related change in the shares included in the index.
+
+How Do You Calculate the Share Index?
+The price of a share market index is calculated using a method called market cap weighting. ​
+​
+In this system, the weight of each security is calculated based in the total amount of shares issued.​
+​
+If a company’s market capitalization is R10,000,000 and the value of all shares in the index is R100,000,000, then the company would be worth 10% of the index (R10,000,000/R100,000,000). ​
+These types of systems are made possible by computers, most are calculated by the minute and so are very accurate to the market.
+
+What Are the Main Indices in the Local Market?
+All Share Index​
+The FTSE/JSE All Share index is the main index of the local share market. It consist of companies that represent roughly the largest 99% of the companies listed on the main board of the JSE by market capitalization and is the largest index in terms of size and overall value. ​
+ALSI 40 Index​
+These are the top 40 largest companies listed on the JSE by investable market capitalization. The FTSE/JSE All Share 40 Top Companies Index (ALSI 40 Index) is an equity index and is the index that most people monitor as an overall benchmark for the local exchange. ​
+A relatively small quantity of the total number of securities listed on the JSE are combined into the index on the basis that movements in the share prices of those essential companies can be said to represent the movement of the market as a whole. ​
+Companies selected for inclusion in the ALSI 40 Index are generally larger companies with widely traded and marketable shares (e.g. MTN, Sasol, Shoprite etc).
+MidCap Index​
+The FTSE/JSE Mid Cap Index will represent 85%-96% of the market capital  value of all companies listed on the Main Board of the JSE. ​
+​
+Other Indicators​
+There is also a resources index, financial index and an industrial index:​
+
+The financial index includes shares such as banks. e.g. Standard Bank​
+The resource index is made up of resource shares e.g. BHP Billiton​
+The industrial index is made up of industrial companies. e.g. Compagnie Financiere Richemont SA
+
+
+ 
+
+
+
