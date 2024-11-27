@@ -1,0 +1,70 @@
+
+Technical Analysis Fundamentals
+Overview
+In module 4 of the individual investor modules, there was an introduction to the two techniques that an investor can use when deciding on which shares to invest in - fundamental and technical analysis. That module gave deeper insights into fundamental analysis.​
+​
+This module will offer greater insight into the fundamentals of technical analysis including:​
+
+defining technical analysis; ​
+considering how it differs to fundamental analysis; ​
+discussing the advantages of technical analysis as well as what to be cautious of when using this technique, and;​
+looking at the tools of technical analysis.
+
+
+Defining Technical Analysis
+Technical analysis is the study of prices, primarily through the use of charts, for the purpose of forecasting future price trends. ​
+Being a fundamental analyst interested in supply and demand poses several challenges: first getting timely, reliable information and, second, calculating the market impact of so many factors if you had the information. ​
+Even if you were an insider and had perfect statistics for every supply and demand factor, a lot of other market participants don’t. Their perceptions and opinions might be far different from yours and their deduction of value might be well off the mark of what the current supply-demand figures suggest. ​
+However, in a free-market setting, there is one element that incorporates changes in  fundamental factors, big or small, and the interpretation of those factors. What’s more, this element is not a secret limited to insiders but is readily available to all, without regard to their knowledge of the fundamentals. ​
+This element is price. The statistics that the fundamentalists study are past history, usually already out-of-date and sterile, because the market is not interested in the past or even in the present. It is continuously looking forward; trying to discount future developments, weighing and comparing all the estimations and guesses of hundreds of thousands of investors who look into the future from various points of view. In short, the going price, as determined by the market itself, understands all fundamental information which the statistical fundamental analyst can desire to learn (as well as some which is possibly secret to him, known only to a few insiders) and much else besides of equal or even greater importance. 
+ 
+Fundamental vs Technical Analysis
+Whereas technical analysis is focused on the study of prices, fundamental analysis focuses on the economic forces of supply and demand that affect price movements. The fundamentalist examines all the relevant and available information affecting the price of a share in order to determine the intrinsic value of that share. ​
+​The intrinsic value is what the fundamentals indicate a share is worth based on the laws of supply and demand. If this intrinsic value is under the market price, then the share is overpriced and should be sold and vice versa. Fundamental analysis is when you look at the company's cashflow statement, balance sheet, and the value of the shares amongst other ratios. You can also engage the management of the company as well as company news to gain a clearer picture of its performance.​​
+​No matter where you perch in the marketplace you can’t know all the motivations that prompt buy and sell decisions. But these hundreds and thousands of decisions do leave tracks – prices and patterns. Studying these tracks is the art or science known as technical analysis. The function of price is to integrate supply-demand relationships. 
+ 
+How Technical Analysis Works
+When a student of price allows fear and greed to influence his market response, he loses many opportunities in the market whether he is buying or selling or doing nothing. The student must at all times resist these two emotions. In order to conquer fear and greed, confidence and courage are needed. Courage is inborn. Confidence is gained by study, study and more study. ​
+Technical analysts are of the thinking that it is futile to study company financial statements, earnings and dividend reports, industry developments and other data in an attempt to determine the “underlying value” of market devices including shares. ​
+They believe that a share can vary in price from well below the book value to well above the book value and this wide divergence between the intrinsic value and actual market price is commonplace. ​
+The technical analyst does not care what the underlying forces of a shift in the supply – demand are, rather in what occurs, as all the information known is all included and distilled into just one item, price. Instead of trying to assess supply and demand and all the other factors that make up a market, technical analysis studies the action of prices and the market itself. Should demand outweigh supply, prices will increase. On the other hand, if supply is greater than demand, price will fall. The real value of a share at any point in time is determined solely by supply and demand - which is reflected in the price.​
+The thing that makes technical analysis attractive is that it can be applied successfully to practically any trading medium and investment time horizon. A technician can analyse shares, options, commodities, bonds, and numerous other forms of investments for buy and sell opportunities, and can do so by studying moment-by-moment, intraday, day-to-day, weekly, or monthly data – from extremely short-term to extremely long-term viewpoints. The technician can easily follow as many markets as desired, which is generally not true for his or her fundamental counterpart. Because of the tremendous amount of data the fundamental analysts must deal with, most of them tend to specialize in one market.  
+ 
+Advantages of Technical Analysis
+The fundamentalist analyzes the cause of movement in the market, while the technician considers the effect. The technician believes that the effect is all that he or she needs to know and that the reasons are not necessary, while on the other hand the fundamentalist always has to know why. ​
+​Typically at the start of crucial market moves, the fundamentals do not clarify or back up what the market seems to be doing. It is at these critical stages in the trend that the two approaches seem to differ the most. ​
+​One reason for these differences is that the market price has a tendency of leading the known fundamentals and prices are now responding to the unknown fundamentals. ​
+​Technical analysis attempts to bypass some of the uncertainty of fundamental factors, which are often contradictory and difficult to “weigh” by concentrating on how the market is actually reacting. ​
+​One cannot know all the motivations that prompt buy and sell decisions but all these decisions do leave tracks by its price action. A trend indicates that there exists an inequality between the forces of supply and demand. Such action in the forces of supply and demand is usually readily identifiable by the action of the market itself as displayed in the prices. Often it is not just the price itself that is important but how fast or how slow or how far from the “normal” is the price movement. 
+1. Adaptability​
+One of the greatest strengths of technical analysis is its adaptability to virtually any trading medium and time dimension. The chartist can easily follow as many markets as desired which is generally not true for his or her fundamental counterpart. Because of the tremendous amount of data the latter must deal with, most fundamentalists tend to specialize in one market. The advantages here should not be overlooked.​
+​2. Big Picture​
+Another advantage the technician has is the “big picture.” By following all of the markets, he or she gets an excellent feel for what markets are doing in general, and avoids the “tunnel vision” that can result from following only one market. ​
+​3. Handles Different Time Dimensions​
+A further strength of technical analysis is its ability to handle different time dimensions. Whether the user is trading the intra-day tic-by-tic changes for day trading purposes or trend trading the intermediate trend, the same principles apply. 
+ 
+Caution Around Technical Analysis
+Critics of the technical approach tend to have two main arguments. The first argument is that chart patterns have been so broadly published in the last numerous years which has resulted in many traders being very familiar with these patterns, and regularly acting on them in concert. This produces a “self-fulfilling prophecy,” as surges of buying or selling are formed in reaction to bullish or bearish patterns. ​
+​The second argument is that chart patterns are almost fully biased. There has been no successful study in terms of mathematically quantifying any of these patterns. They are in the mind of the beholder.
+​The truth of the matter is that charting is very subjective. Chart reading is an art and the patterns are seldom so clear that even experienced technicians always agree on their interpretation. There is always an element of doubt and disagreement. Let’s say most technicians did approve a market forecast, it still would not necessarily result in them entering the market at the same time and in the same way. 
+There is a saying in Wall Street to the effect that “there is nothing wrong with charts – the trouble is with the chartists.” Which is simply another way of communicating the truth that what is important is the interpretation of the chart and not the chart itself. ​
+Traders are inclined to lose impartiality when they make use of technical analysis indicators. The trader cannot stay objective and the bias of using the indicator overpowers him. It probably has to do with the compulsion many traders feel to have to trade. They are then inclined to undermine their indicators by trading when the signal is not completely clear. ​
+Traders have the tendency to test their systems and indicators on an insufficient amount of data. Analysts need to test trading systems and technical indicators on a wide array of data in different types of trading markets. Additionally, many traders and analysts don’t forward test their trading systems and technical indicators in real time. There is a rush to trade based on insufficient back testing and forward testing. Thus it is really hope they are trading on and not a sound, valid basis. ​
+Numerous traders neglect to include sound risk management practices in their trading systems. Furthermore, a lot of traders fail to include stop loss orders with their original orders when they use technical indicators only. ​
+So what makes a good technical trader? The best technical traders use technical indicators and intuition, and the one thing they all have in common whether they can articulate them or not, they all have a set of well-defined rules they trade by.
+ 
+The Technician’s Tools
+Charts are the technical analyst’s operating tools. They are like a map showing you where a share has been and where it “might” be going. ​
+There are a number of different charts that can be used for technical analysis including but not limited to:​
+​
+
+Line charts​
+Bar charts​
+Candlestick charts​
+Point and figure charts​
+
+​Many technical indicators can be used on these charts such as moving averages, moving average convergence/divergence (MACD) or relative strength index (RSI) to name a few.​
+​The type of chart and the time period that is used by a technical analyst is dependent upon what information they consider to be most important, and which charts and time period ideally suits them. These charts can range from time periods of one minute to yearly charts. Probably the most used chart is a daily chart plotting the closing price of the day.
+
+
+

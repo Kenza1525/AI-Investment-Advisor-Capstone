@@ -1,0 +1,64 @@
+
+What are Options?​
+Overview
+This is a brief module to familiarize you with options. Options are a class of derivatives.​
+​
+We will delve into the definition of an option as well as the two different types of options available. We will also briefly consider how options work in terms of investing.
+
+Defining Options
+In order to best understand what options are, let’s take a moment to consider car insurance as they follow similar principles.​
+Car insurance isn’t there to protect the car itself from accidents, but rather it ensures that in the event of any damage to the car, the policy will cover the damages. The damages is also not just covered by merely receiving a fixed pay-out amount from the policy. ​
+Instead, the policy will pay the value needed depending on the damage. In other words, if the damage is only R15,000 the policy will pay out R15,000, if the damage is R100,000 the insurance policy will pay out that amount. ​
+In essence the pay-out of the policy is in relation to how much the car is damaged when compared to what the car originally looks like. The more the damage, the higher the pay-out. ​
+In addition, one does not get car insurance for free. In order to have car insurance one has to settle a premium, in most cases monthly. We can sum this insurance process up by stating that, by paying one month’s premium, one effectively buys “protection” and that the period this protection is valid for is one month. ​
+Another premium is due for the insurance to extend into the following month. If you don’t pay the premium due, there will be no cover. ​
+Simply put, if your car insurance stopped on the 31st of the month, and you did not renew it, then if the car gets stolen or damaged the very next day, you will not be protected at all. Or looked at from a different angle, the policy “does not care” what happens after the expiration date of the policy as the insurance company is no longer on the hook from then onwards.
+Options and Car Insurance are not that different after all: ​
+When it comes to options, the traditional car insurance model takes on the form of a financial contract that allows protection against possible damages caused by the market moving against your position. ​
+Similar to car insurance, this financial insurance policy (the option) also requires you to pay a premium, and this only covers your position for a certain, pre-determined time. If you need new insurance after that point, you once again need to pay a premium. ​
+The financial insurance also does not pay out at random. Much like the car insurance, the financial insurance will look at where the current market is trading (i.e. damage) in relation to the protection level originally agreed on (i.e. what your car usually looks like). ​
+In the end, the financial policy or option will be worth the difference between the damage and normal much the same as the car insurance offered us, allowing for a choice of two outcomes: ​
+
+a) Either get the car replaced, or when speaking in financial terms, transacting in the underlying instrument at the options contract strike rate. ​
+b) Get a cash pay out to fix the car i.e. a cash pay-out received on a financial contract that compensates for the difference between the prevailing spot rate and the option’s contract rate. ​
+
+When looked at from this point of view, one can agree that as far as vanilla options* go, their function and use are indeed not that difficult to grasp. ​
+*Vanilla option is a plain/ordinary option with no special features
+
+Call Options
+A call option provides the buyer of the option with the right, but not the obligation, to purchase the underlying instrument on which the call option is taken out (i.e. written).​
+Call options are available on numerous types of securities such as:​
+• Currencies​
+• Shares​
+• Commodities​
+• Interest Rates​
+​
+Regardless of the underlying instrument, a Call option will always retain its own core underlying characteristics, in other words, the buyer of the call option has the right to purchase the underlying instrument.​
+It is important to understand the concept that a call option is an instrument in its own right. In other words, a Call option itself, even though it is a “purchase contract on something”, can be bought or sold.
+As can be seen, the benefit of a call option is that it allows for full protection should the market move against the option, yet still allowing the flexibility to walk away from the option and let it expire in the event of the market price being lower than that of the strike rate on the option. i.e. when the end result is not favourable for the investor.
+
+Put Options
+A Put option provides the buyer of the option with the right, but not the obligation, to sell the underlying instrument on which the put option is written on. ​
+As with Call options, Put options are also available on all the same types of securities highlighted earlier, and one can safely assume that if there is a market for the Call options on any particular instrument, then there will also be a market for Put options. Call and Put options fall under a general category often referred to as Vanilla Options.​
+This basically implies that there are no frills or special conditions that exist around these options other than a few basic varieties. In the end though, Vanilla options provide a very basic core function, that of providing a fixed rate of conversion which the buyer may choose to use or not.​
+Back to Put options, regardless on the underlying instrument, a put option will always retain its own core underlying characteristic of providing the buyer of the put option the right to sell the underlying instrument.​
+As highlighted before but worth repeating, a put option is an instrument in its own right. In other words, the Put option itself, even though it is a “contract to sell something”, can be bought or sold.
+The benefit of a Put option lies in the fact that it allows for full protection should the market move against the option, yet still allowing the flexibility to walk away from the option, and let it expire, in the event of the market price being higher than that of the strike rate on the option.​
+*The strike price for buying or selling the security until the expiration date.
+
+Investing Using Options
+Options are very versatile in their application, and in order to understand how they are used, as part of a trading or investing strategy we need to first explore the various motives one would have to use them. ​
+Though, regardless of the motive being trading or hedging the final outcome one would look to achieve from options lies as a combination of the following: ​
+
+Enhancement of an existing process and/or ​
+Participation in favourable market movements ​
+
+​
+Options are a flexible investment product. These investments are two-sided trades involving a buyer and a seller. Each call option has a bullish buyer (believes shares will go up) and a bearish seller (believes shares will go down), while put options have a bearish buyer and a bullish seller. ​
+​
+Options contracts are typically represented by 100 shares of the basic security, and the buyer pays a premium fee for each contract. For instance, if an option has a premium of R5 per contract, buying one option would cost R500 (R5 x 100 = R500).​
+​
+The strike price somewhat forms the basis of the premium —the strike price is the price for buying or selling the security until the date of expiration. The premium price is also influenced by the expiration date. In the same way that milk has an expiration date, the expiration date for options shows the day the option contract must be used by. The underlying asset will decide the use-by date.
+
+
+

@@ -1,0 +1,53 @@
+
+Determining the Value of a Company​
+Overview
+At this point in your investment journey, you have been encouraged to do some homework on the company whose shares you are considering investing in.​
+​
+Your research should help you to establish that the company in which you are investing is growing and is financially sound. You want to know that the company operates in a strong and growing industry and that it offers services and products which are desirable to the consuming public.​
+​
+This naturally begs the question of how exactly to determine whether the company is in fact doing well, and more importantly, that it is expected to continue doing so.​
+​
+This will be the focus of this module. We will share some of the documents or principles that will help clarify the value of a potential company.
+
+Financial Statements
+The process of getting to know a company’s financial condition through studying its balance sheet, income statement and cash flow statement is known as fundamental analysis.​
+​
+The financial statements are made up of:​
+​
+Balance Sheet (Statement of Financial Position): This is used to work out a company’s net worth. It measures what the company has minus what they owe.​
+​
+Income Statement (Statement of Comprehensive Income): used to figure out a company’s profitability. It is the profit and loss account statement that records how much money or profit the business has generated over a period of time (Profit/Income = Sales – Expenses).
+
+Financial Ratios
+Financial ratios are used to determine how well the company is actually doing. They are helpful tools to identify relationships between two or more figures found in the financial statements.​
+​
+Earnings Per Share (EPS): This is generally considered to be the single most important fraction in determining a share’s price. It measures the portion of the business’s profits that are allocated to each ordinary share that is outstanding and helps to calculate the return on your investment.​
+​
+
+Earnings per share=(Net Income )/(Number of shares)​
+
+​
+Price to Earnings Ratio (P/E): The earnings per share (EPS) are used to calculate the price to earnings ratio. The price-to-earnings ratio (P/E ratio) is the ratio for valuing a company that measures its current share price in relation to its per-share earnings (EPS). The price-to-earnings ratio is also identified as the earnings multiple or price multiple. P/E ratios are used by investors and analysts to decide the relative value of a company's shares in an apples-to-apples comparison.  This means doing a comparison of the PE ratios between companies in the same sector, such as Pick n Pay and Shoprite both found in the retail sector.​
+ 
+
+Price to Earnings =(Share price)/​(Earnings per share)
+ 
+
+Book Value vs Market Value
+You can determine the value of a company by considering their book value and market value.​
+​
+Book value literally means the value of a business according to its books (accounts) that is revealed through its financial statements. ​
+​
+In theory, book value represents the total amount a company is worth if all its assets are sold and all the liabilities are paid back. This is the amount that the company’s creditors and investors can expect to receive if the company is closed down.​
+
+Book value of a company=Total assets−Total liabilities​
+
+Market value signifies the value of a company according to the share market. While market value is a general term that represents the price an asset would get in the marketplace, it represents the market capitalization in the context of companies. ​
+​
+It is the total market value of a company represented as a rand amount. Market value or market cap is calculated by multiplying a company's unpaid shares by its current market price.​
+
+Market capitalisation of a company = Current market price (per share)
+
+
+
+

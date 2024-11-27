@@ -1,0 +1,67 @@
+
+What are Returns​
+Overview
+The reason we invest our money in shares is to increase our wealth. We increase our wealth by getting a good “return” on our investment. ​
+​
+In this module, we will investigate what we mean by the concept of return.
+
+Defining Returns
+The return on an investment consists of any dividend, interest, rent or other income added to the increase in the value of an asset over a set period, and is usually defined as a yearly percentage of the original investment. It is important to note that when investing in shares you can only get dividends and capital growth (increase in value of the share). ​
+​
+For example, you bought shares for R10.00 at the beginning of the year and at the end of the year the value of the shares increased to R11.75. During this period you received a dividends of 25c. This means that within the year your return consists of 25c dividend, plus R1.75 of capital growth, ie R2. This return is 20% (2/10) of your original investment of R10.00.​
+​
+When we make an investment in a share or any asset, we all want to get a good return on our investment. In simple language a return is the extra you get back over and above your initial investment and the higher that is the better.
+ 
+1. Required Rate of Return
+The required rate of return is the minimum rate of return you should accept from an investment, in order to reward you for not buying something today. ​
+​
+In other words, an investor invests in an investment today in order to enjoy the benefits and rewards at a later stage.​
+​
+The components of an investor’s required rate of return that will reward him/her for the risk taken are:​
+
+The time value of money during the investment period,​
+the expected rate of inflation during the investment period, and​
+the risk involved.​
+
+We will now discuss these individually.
+
+1.Time Value of Money
+
+The time value of money refers to how much a certain amount of money will be worth at a future date, when it has been invested at a certain rate of compound interest over a certain time frame.​
+​
+For example, say you invest R10,000 in a bank account that gives you 5% interest per year. After one year you will have R10,000 plus the 5% of R10,000 (which is R500). So in total you will have R10,500. ​
+​
+After two years you will have the R10,500 you had at the end of the first year plus 5% of the R10,500 (which is R525). So in total you will have R11,025 and so on.​
+​
+Investors generally prefer to receive their money back sooner rather than later so that they can grow it even more. Therefore, if they are willing to sacrifice the use of money for a definite time, some reward is required in return. What this means is that when you invest in a share, the share must do well enough in order to take the time value of money into account (i.e. it must do better for you than simply leaving the money in a bank account).
+
+2. Inflation Adjusted Return
+
+The increase (or decrease) in the general cost of goods and services in an economy is known as inflation. Inflation must be included in any calculation in order to properly reflect the value of the investment return now or at a later date. ​
+In order to calculate the true value of your investment return adjusted to consider inflation rates, we first need to determine the value of the return.  This can be done by using the following formula:​
+Return = (Final price - Starting price + Dividends) / (Starting price)​
+We then need to determine the inflation rate over a period of time. This can be done using the following formula:​
+Inflation = (Finishing CPI level - Starting CPI level) / Starting CPI level. It is also possible to look up the inflation rate for the year on the internet instead of using the above calculation.​
+Lastly, we need to look at how the inflation effects the value of your retun. This can be done using the following formula:​
+Inflation-adjusted return = (1 + Share Return) / (1 + Inflation) - 1​
+ 
+2. Inflation Adjusted Return Example
+Let's say for example you buy 1000 shares in Pharmaceutical company ABC at R100 per share at the beginning of the year. During that year the company paid out dividends of R10. At the end of the year, the share price came in at R120 per share. During this year, the national inflation rate was set at 0,06 or 6%.​
+​Using the calculations we discussed previously, let's determine the inflation adjusted return of the investment in company ABC. ​
+​We start off by calculating the return amount:​
+(Ending price - Beginning price + Dividends) / (Beginning price) = Return​
+(120 – 100 + 10) / (100) = 0,3 or 30% return*​
+​
+We then take the inflation rate of 0,06 or 6% and use it together with the 30% we just calculated into calculate the inflation adjusted return:​
+(1 + Share Return) / (1 + Inflation) - 1 = Inflation-adjusted return​
+(1 + 0,3) / (1 + 0,06) - 1 = Inflation-adjusted return 0,226 or 22,6% Inflation-adjusted return*​
+​
+​*Brokerage costs and taxes are not included in these examples
+ 
+3. Risk Involved
+Risk factors differ from one type of investment to another or from one type of environment to another. For example the risk of investing in small cap firms can be high, but the returns expected should pay off the risk taken.​
+If there is some uncertainty that the capital amount will be repaid, a premium will be required by an investor. When there is a high degree of confidence about an investment’s return, for example, in the case of government bonds, the premium will be low. This is in line with one of the most important principles of financial management: that the return must be equal to the risk taken.​
+The minimum rate of return required from any investment changes over time. This means that the rate of return does not remain constant but depends on expected changes in the three variables that we have talked about. It is important however, for you as an investor to achieve a return that rewards you for the amount invested, when there is any element of risk involved.
+
+
+
