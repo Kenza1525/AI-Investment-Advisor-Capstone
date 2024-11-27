@@ -120,9 +120,7 @@ def update_forecast_chart(data):
                 y=0.99,
                 xanchor="left",
                 x=0.01
-            ),
-            width=100,
-            height=100 
+            )
         )
         
         fig.update_xaxes(showgrid=True, gridwidth=1, gridcolor='LightGray')

@@ -109,6 +109,19 @@ class UserProfileDatabase:
         return tuple(profile) if profile else None
 
 
+# Standalone functions
+def init_db():
+    """Initialize the database."""
+    db = UserProfileDatabase()
+    return db
+
+
+def insert_profile(profile_data):
+    """Insert a new user profile."""
+    db = UserProfileDatabase()
+    return db.create_profile(profile_data)
+
+
 # Testing the class
 if __name__ == "__main__":
     db = UserProfileDatabase()

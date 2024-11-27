@@ -45,8 +45,38 @@ class RiskBasedAllocator:
             return "Aggressive"
         else:
             return "Unknown"
+    # def pre_defined_portfolio(self, status):
+    #     if status == "Retiree":
+    #         self.asset_classes["Local equity"] = 0.10
+    #         self.asset_classes["Local bonds"] = 0.50
+    #         self.asset_classes["Local cash"] = 0.25
+    #         self.asset_classes["Global assets"] = 0.15
+    #     elif status == "Young investor":
+    #         self.asset_classes["Local equity"] = 0.25
+    #         self.asset_classes["Local bonds"] = 0.45
+    #         self.asset_classes["Local cash"] = 0.15
+    #         self.asset_classes["Global assets"] = 0.15
+    #     elif status == "Middle-aged investor":
+    #         self.asset_classes["Local equity"] = 0.20
+    #         self.asset_classes["Local bonds"] = 0.45
+    #         self.asset_classes["Local cash"] = 0.20
+    #         self.asset_classes["Global assets"] = 0.15
+    #     elif status == "Fresh Graduate":
+    #         self.asset_classes["Local equity"] = 0.15
+    #         self.asset_classes["Local bonds"] = 0.50
+    #         self.asset_classes["Local cash"] = 0.20
+    #         self.asset_classes["Global assets"] = 0.15
+
         
     def risk_base_allocation(self):
+        # print("If you are a retiree, a young investor, a middle-aged investor or a fresh graduate, we have pre-defined portfolios for you. If you will like to use one of these portfolios, please enter your status. If not, please enter 'No' to continue.\n")
+        # assess = input("Will you like a pre-defined status?")
+        # if assess != "No":
+        #     stats = input("Please enter your status: ")
+        #     self.pre_defined_portfolio(stats)
+        #     return self.asset_classes
+        # else:
+    
         risk_tolerance = self.calculate_risk_tolerance()
         if risk_tolerance == "Conservative":
             self.asset_classes["Local equity"] = 0.10

@@ -33,8 +33,6 @@ future_distribute = {}
 future_distributeDone = False
 
 
-
-
 ACCESS_TOKEN = "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"
 investment_tool_instance = InvestmentEducationTool(
     repo= "Ayebilla/SA_Investment_info",
@@ -69,7 +67,6 @@ def personalized_advice_tool(risk_assessment_responses={'question1': 'a','questi
             'question11': 'd'
             }
         - amount: the amount of money the user wants to invest. Default is 5000.
-    
     '''
     global investment_distribution, distributionDone
     user_risk = RiskBasedAllocator(risk_assessment_responses)
@@ -200,7 +197,18 @@ risk_assessment_responses: a dictionary containing the user's responses to the r
             'question10': 'c',
             'question11': 'd'
             "
-
+Before you begin asking the Questions 1 to 11, ask the user if they will like one of the pre-defined portfolios for retirees or recent graduates. If they do, ask them to specify the one they want and then proceed to offer the recommendations for that and do not proceed to ask the rest of the questions.
+If a person is a retiree or recent graduate, you must use distributions given here:
+Retiree portfolio - with the following distributions:
+    Local equity: 20%
+    Local bonds: 45%
+    Local cash: 20%
+    Global assets: 15%
+Fresh Graduate portfolio - with the following distributions:
+    Local equity: 10%
+    Local bonds: 50%
+    Local cash: 25%
+    Global assets: 15%
 
 Question 1: The principle objective of this investment is…
         options: 
