@@ -1,0 +1,48 @@
+
+Market Capitalisation
+Overview
+Market capitalization should be a familiar term to you by now.​
+​
+You would have been introduced to it under the module, “Compiling Your Investment Portfolio”. ​
+​
+In this module, we will delve a little deeper into the different sizes of market capitalization and how this affects your investments. We will also consider some misconceptions around market capitalization as a measure of a company’s worth.
+
+Defining Market Capitalisation
+Market Capitalisation refers to the total Rand value of a company’s outstanding shares. Since a company is represented by X number of shares, multiplying X with the per share price represents the total rand value of the company. Outstanding shares signify the shares of a company presently held by all its shareholders, including institutional investors’ share blocks as well as restricted shares owned by the officers and insiders of the company.​
+​
+Market capitalisation=Outstanding shares x Share price​
+​
+Therefore if a company has issued 1,000,000 shares and they are each valued at R20 then the market capitalisation of the company is R20,000,000.​
+​
+A common mistaken belief is that the share price indicates how big the company is. This is not necessarily true. For example, company A could have a higher share price of R100 per share in comparison to company B that has a share price of R20 per share, but company A may only have 1 million shares while company B has 10 million shares. In effect, company A would have a market value of R100 million while company B is valued at R200 million.
+
+Market Capitalisation Ranking
+Market capitalisation is a useful tool to determine which shares you are interested in, and how to diversify your portfolio with companies of different sizes.​
+​
+Large cap companies are recognized as the JSE Top 40 and have market caps of hundreds of billions of Rands.​
+​
+These big companies have typically been around for a while, and they are major players in well-founded industries. Investing in large-cap companies does not essentially give massive returns in a short period of time, but in the long-term, these companies could increase in share value and reward shareholders with dividend payments.​
+​
+Examples of large cap companies are Discovery, Aspen Pharmacare, and Shoprite to name a few.
+Mid-cap companies  ​
+Mid-cap companies are companies that are reputable and function in an industry projected to experience quick growth. Mid-cap companies are in the process of expanding. They are attractive for their growth potential. Examples of mid-cap companies are Clicks, Barloworld and Spar amongst others.​
+Small-cap companies ​
+The companies that are considered small cap companies are those that are the next biggest after mid-cap companies. These companies are considered higher risk investments due to the markets they serve and their size. Smaller companies with smaller share price values are riskier due to the spread, which represents the difference in the supply and demand of a share. A high demand for shares drives up the price of shares whereas a low demand drives down the price of shares. It is this difference that is shown by this spread. What makes this risky for small cap companies with smaller share values is that even small shifts in share value can make a big difference in the overall value of the share.
+
+Small-cap Market Spread Example
+A small cap technology company's current share price is R20 per share. They release a new smartphone that becomes very popular in the market. This drives up the share price to R50 per share, increasing the value by R30 per share from the original share price. The increase in share value can be calculated by subtracting the original share price from the new share price: R50 – R20 = R30. This increase in share value was caused by a rise in demand for the shares as more people look to invest in the company.​
+A few months later, the smartphones start breaking and the company has a huge wave of returns and replacements to deal with. This scandal causes investors to start selling their shares which makes the price of the shares drop from R50 per share to R25 per share. That is a decrease in value of R25, which in this case is 50% of the share price before the smartphones started breaking. This decrease in share value was caused by a drop in the demand for the shares because of all of the problems the company was facing with their most popular product. ​
+This example shows a very big rise and drop in share value for small cap company due to the supply and demand of the shares. A big change in value like this is known as a large spread.  ​
+The same changes in price for a mid – large cap company will not have as much of an effect on the overall share value as it does with a small cap company because their shares are worth more and can therefore withstand a higher spread than small cap companies. ​
+For example, a R25 shift in share price for a company whose shares sell for R1200 will not have as much of an impact as it does for a company whose shares sell for R20. This comparison shows the higher risk with investing in small-cap companies as a small change in share price can have a bigger effect on the overall share value than it would with a mid – large cap company.
+
+Misconceptions About Market Capitalisation
+Although it is frequently used to describe a company, market cap does not measure the equity value of a company. Only a detailed analysis of the fundamentals of a company can do that. ​
+​
+Market cap is insufficient to value a company because the market price on which it is founded does not necessarily reveal how much a piece of the business is worth. Shares are regularly over- or undervalued by the market, which means that the market price regulates only how much the market is willing to pay for its shares. ​
+​
+Although market cap measures the cost of buying all of the shares of a company, it does not govern the amount the company would cost to obtain in a merger transaction. ​
+​
+Two main factors can alter the market cap of a company: key changes in the share price or when a company issues or repurchases shares. An investor who exercises a large number of securities can also increase the amount of shares on the market and negatively affect shareholders in a process known as dilution. 
+
+ 

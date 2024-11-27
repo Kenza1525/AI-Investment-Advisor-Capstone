@@ -1,0 +1,39 @@
+
+Types of Bonds​
+Overview
+You were introduced to bonds in a previous module and got to understand what a bond is and why you should invest in bonds.​
+​
+This module will now offer more clarity around the categories of bonds that you can invest in as well as the characteristics of bonds.
+
+Categories of Bonds
+There are four main categories of bonds sold in the markets. However, you may also find foreign bonds issued by firms and governments on some platforms.​
+​
+1. Corporate bonds are issued by companies. Companies issue bonds to raise funds for large scale projects rather than getting bank loans for them because, in many cases, the bond markets offer more favorable terms and lower interest rates.​
+2. Government bonds are bonds issued by government entities and list them on the JSE Debt Board to raise funds for large scale projects such as roads, hospitals, and power stations. The types of bonds issued can vary, e.g. Vanilla Bonds, Variable Bonds, CPI Bonds and Zero Coupon bonds. ​
+3. Repo bonds. The full name for a Repo is “repurchase agreement” and can also be known as a sale and repurchase agreement or RP. This type of bond involves the sale of securities with the agreement that the original seller will eventually buy their securities back from the original  buyer, usually at a higher price than what they were originally sold for. ​
+4. Green bonds allows investors access to the investment potential of green technologies, services, and infrastructure. Green Bonds are used to raise funds for new or existing green projects that have a positive climate/ environmental benefit.
+
+The Characteristics of Bonds
+Most bonds share some common basic characteristics including:​
+​
+Face value is the amount of money that the bond will be valued at at maturity; it is also what the bond issuer uses as the reference amount when calculating interest payments. For example, say an investor purchases a bond at a premium R10,090 and another investor buys the same bond later when it is trading at a discount for R9,800. When the bond matures, both investors will receive the R10,000 face value of the bond.​
+​
+The coupon rate is the rate of interest the bond issuer will pay on the face value of the bond, stated as a percentage. For example, a 5% coupon rate means that bondholders will receive 5% x R10 000 face value = R500 every year.​
+​
+Coupon dates are the dates on which the bond issuer will make interest payments, which can be made in any interval.​
+​
+The date on which the bond matures is known as the maturity date and it is when the bond issuer will pay the bondholder the face value of the bond.​
+​
+The price at which the issuer of the bond originally sells the bonds is known as the issue price.
+ 
+Varieties of Bonds
+The bonds accessible to investors come in numerous different forms. They can be separated by the rate or type of interest or coupon payment, to be paid by the issuer, or have other attributes.​
+​
+Zero-coupon bonds do not pay coupon payments and as an alternative are issued at a markdown to their par value that will produce a return once the bondholder is paid the full-face value when the bond matures. ​
+​
+Convertible bonds are debt tools with a set-in option that lets bondholders transform their debt into stock (equity) at some point, depending on particular conditions like the share price.​
+​
+Callable bonds also have an entrenched option but it is not the same as what is found in a convertible bond. A callable bond can be “called” back by the business before maturity. A callable bond is riskier for the buyer of the bond because the bond is more likely to be called when it is increasing in value.
+
+
+
