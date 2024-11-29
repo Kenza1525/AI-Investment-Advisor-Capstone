@@ -22,30 +22,37 @@ def load_feedback():
         return []
 
 # Custom CSS
+# Custom CSS update
 app.index_string = '''
 <!DOCTYPE html>
 <html>
     <head>
         {%metas%}
-        <title>Mandela Investments Feedback Dashboard</title>
+        <title>NexusWealth AI Feedback Dashboard</title>
         {%favicon%}
         {%css%}
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap');
+            
             body {
-                background-color: #0a0a0f;
+                background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
                 margin: 0;
-                font-family: 'Inter', sans-serif;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                min-height: 100vh;
             }
-            .dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner td {
-                font-family: 'Inter', sans-serif !important;
-            }
+            
             .custom-card {
-                background: linear-gradient(145deg, #131320, #1a1a2e);
+                background: rgba(25, 25, 25, 0.9);
                 border-radius: 15px;
                 box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
                 backdrop-filter: blur(4px);
-                border: 1px solid rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner td,
+            .dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner th {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
             }
         </style>
         {%scripts%}
@@ -61,12 +68,13 @@ app.index_string = '''
 </html>
 '''
 
-# App layout
+# App layout update
 app.layout = html.Div(
     style={
-        "min-height": "100vh",
-        "color": "#e0e0e0",
+        "minHeight": "100vh",
+        "color": "#ffffff",
         "padding": "2rem",
+        "fontFamily": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
     },
     children=[
         # Header Section
@@ -74,26 +82,27 @@ app.layout = html.Div(
             className="custom-card",
             style={
                 "padding": "2rem",
-                "margin-bottom": "2rem",
-                "text-align": "center",
+                "marginBottom": "2rem",
+                "textAlign": "center",
             },
             children=[
                 html.H1(
-                    "Mandela Investments Feedback Dashboard",
+                    "NexusWealth AI Feedback Dashboard",
                     style={
-                        "font-size": "2.5rem",
-                        "font-weight": "700",
-                        "margin-bottom": "1rem",
-                        "background": "linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%)",
-                        "-webkit-background-clip": "text",
-                        "-webkit-text-fill-color": "transparent",
+                        "fontFamily": '"Righteous", cursive',
+                        "fontSize": "2.5rem",
+                        "fontWeight": "700",
+                        "marginBottom": "1rem",
+                        "background": "linear-gradient(90deg, #00ff88 0%, #00d4ff 100%)",
+                        "WebkitBackgroundClip": "text",
+                        "WebkitTextFillColor": "transparent",
                     }
                 ),
                 html.P(
                     "Real-time feedback analysis and insights",
                     style={
-                        "font-size": "1.1rem",
-                        "color": "#8890b5",
+                        "fontSize": "1.1rem",
+                        "color": "#888888",
                         "margin": "0",
                     }
                 )
@@ -107,34 +116,43 @@ app.layout = html.Div(
             children=[
                 # Table Container
                 html.Div(
-                    style={"margin-bottom": "2rem"},
+                    style={"marginBottom": "2rem"},
                     children=[
                         dash_table.DataTable(
                             id="feedback-table",
                             style_table={
-                                "border-radius": "10px",
+                                "borderRadius": "10px",
                                 "overflow": "hidden",
                             },
                             style_data={
-                                "backgroundColor": "#1a1a2e",
-                                "color": "#e0e0e0",
+                                "backgroundColor": "rgba(25, 25, 25, 0.9)",
+                                "color": "#ffffff",
                                 "border": "none",
-                                "font-size": "0.9rem",
-                                "font-family": "'Inter', sans-serif",
+                                "fontSize": "0.9rem",
+                                "fontFamily": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
                             },
                             style_header={
-                                "backgroundColor": "#131320",
-                                "color": "#00d2ff",
+                                "backgroundColor": "rgba(25, 25, 25, 0.9)",
+                                "color": "#00ff88",
                                 "fontWeight": "600",
                                 "border": "none",
-                                "font-size": "1rem",
-                                "font-family": "'Inter', sans-serif",
+                                "fontSize": "1rem",
+                                "fontFamily": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
                             },
                             style_cell={
                                 "textAlign": "left",
                                 "padding": "1rem",
-                                "borderBottom": "1px solid #2a2a40",
+                                "borderBottom": "1px solid rgba(255, 255, 255, 0.1)",
+                                "backgroundColor": "rgba(25, 25, 25, 0.9)",
+                                "color": "#ffffff",
                             },
+                            style_data_conditional=[
+                                {
+                                    "if": {"state": "selected"},
+                                    "backgroundColor": "rgba(0, 255, 136, 0.2)",
+                                    "border": "1px solid #00ff88",
+                                }
+                            ],
                             columns=[
                                 {"name": "ID", "id": "id"},
                                 {"name": "User Prompt", "id": "user_prompt"},
@@ -154,26 +172,24 @@ app.layout = html.Div(
                 # Download Button
                 html.Button(
                     children=[
-                        html.I(className="fas fa-download", style={"margin-right": "8px"}),
+                        html.I(className="fas fa-download", style={"marginRight": "8px"}),
                         "Export Data"
                     ],
                     id="download-button",
                     style={
-                        "background": "linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%)",
-                        "color": "white",
+                        "background": "linear-gradient(90deg, #00ff88 0%, #00d4ff 100%)",
+                        "color": "#1a1a1a",
                         "padding": "12px 24px",
                         "border": "none",
-                        "border-radius": "8px",
+                        "borderRadius": "8px",
                         "cursor": "pointer",
-                        "font-size": "1rem",
-                        "font-weight": "500",
+                        "fontSize": "1rem",
+                        "fontWeight": "600",
                         "display": "flex",
-                        "align-items": "center",
+                        "alignItems": "center",
                         "margin": "0 auto",
-                        "transition": "transform 0.2s ease",
-                        "hover": {
-                            "transform": "translateY(-2px)"
-                        }
+                        "transition": "all 0.3s ease",
+                        "fontFamily": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
                     },
                 ),
                 dcc.Download(id="download-dataframe-json"),
