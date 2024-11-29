@@ -27,8 +27,8 @@ def layout_llm(app, username):
 
     chart_theme = {
         'template': 'plotly_dark',
-        'paper_bgcolor': 'rgba(25, 25, 25, 0.9)',
-        'plot_bgcolor': 'rgba(25, 25, 25, 0.9)',
+        'paper_bgcolor': 'white',
+        'plot_bgcolor': 'white',
         'font': {
             'family': '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
             'color': '#888888'
@@ -142,7 +142,8 @@ def layout_llm(app, username):
             values='Amount',
             names='Asset',
             color='Asset',
-            color_discrete_sequence=asset_colors
+            color_discrete_sequence=asset_colors,
+            hole=0.4
         )
         
         fig.update_layout(
@@ -152,9 +153,13 @@ def layout_llm(app, username):
                 'y': 0.95,
                 'x': 0.5,
                 'xanchor': 'center',
-                'yanchor': 'top'
-            }
+                'yanchor': 'top',
+                'font': {'color': 'black'} 
+            },
+            legend={'font': {'color': 'black'}},  # Make legend text black
+            showlegend=True
         )
+        fig.update_traces(textinfo='percent+label')
         return fig
 
     @app.callback(
@@ -171,7 +176,8 @@ def layout_llm(app, username):
             values='Amount',
             names='Asset',
             color='Asset',
-            color_discrete_sequence=asset_colors
+            color_discrete_sequence=asset_colors,
+            hole=0.4
         )
         
         fig.update_layout(
@@ -181,9 +187,13 @@ def layout_llm(app, username):
                 'y': 0.95,
                 'x': 0.5,
                 'xanchor': 'center',
-                'yanchor': 'top'
-            }
+                'yanchor': 'top',
+                'font': {'color': 'black'} 
+            },
+            legend={'font': {'color': 'black'}},  # Make legend text black
+            showlegend=True
         )
+        fig.update_traces(textinfo='percent+label')
         return fig
 
     @app.callback(
@@ -203,22 +213,23 @@ def layout_llm(app, username):
             years = data['years']
             asset_values = data['asset_values']
             
-            # Add traces for each asset class
-
-                
             for i, (asset_class, values) in enumerate(asset_values.items()):
-                color_idx = i % len(asset_colors)  # This will cycle through colors if there are more assets
+                color_idx = i % len(asset_colors)
                 fig.add_trace(go.Scatter(
                     x=years,
                     y=values,
-                    mode='lines',
+                    mode='lines+markers',  # Added markers
                     name=asset_class,
                     line=dict(
+                        color=asset_colors[color_idx],
+                        width=2
+                    ),
+                    marker=dict(
+                        size=8,
                         color=asset_colors[color_idx]
                     )
                 ))
             
-            # Add total portfolio value
             if asset_values:
                 total_values = []
                 for i in range(len(years)):
@@ -228,18 +239,20 @@ def layout_llm(app, username):
                 fig.add_trace(go.Scatter(
                     x=years,
                     y=total_values,
-                    mode='lines',
+                    mode='lines+markers',
                     name='Total Portfolio Value',
                     line=dict(
                         width=3,
                         dash='dash',
                         color='#00ff88'
+                    ),
+                    marker=dict(
+                        size=8,
+                        color='#00ff88'
                     )
                 ))
             
-            # Update layout with combined title
-            title_text = (f"Portfolio Forecast over {data['metadata']['horizon']} Years<br>" +
-                         f"<span style='font-size: 0.8em'>Inflation Rate: {data['metadata']['inflation_rate']*100:.1f}%</span>")
+            title_text = (f"Portfolio Growth Projection")  # Simplified title
             
             fig.update_layout(
                 **chart_theme,
@@ -248,10 +261,11 @@ def layout_llm(app, username):
                     'y': 0.95,
                     'x': 0.5,
                     'xanchor': 'center',
-                    'yanchor': 'top'
+                    'yanchor': 'top',
+                    'font': {'color': 'black'}
                 },
                 xaxis_title="Years",
-                yaxis_title="Value (Inflation-Adjusted $)",
+                yaxis_title="Value",
                 hovermode='x unified',
                 showlegend=True,
                 legend=dict(
@@ -259,20 +273,21 @@ def layout_llm(app, username):
                     y=0.99,
                     xanchor="left",
                     x=0.01,
-                    bgcolor="rgba(25, 25, 25, 0.9)",
-                    bordercolor="rgba(255, 255, 255, 0.1)"
+                    bgcolor="white",
+                    bordercolor='lightgray'
+                ),
+                xaxis=dict(
+                    showgrid=True,
+                    gridcolor='lightgray',
+                    gridwidth=1,
+                    tickfont=dict(color='black')
+                ),
+                yaxis=dict(
+                    showgrid=True,
+                    gridcolor='lightgray',
+                    gridwidth=1,
+                    tickfont=dict(color='black')
                 )
-            )
-            
-            fig.update_xaxes(
-                showgrid=True,
-                gridwidth=1,
-                gridcolor='rgba(255, 255, 255, 0.1)'
-            )
-            fig.update_yaxes(
-                showgrid=True,
-                gridwidth=1,
-                gridcolor='rgba(255, 255, 255, 0.1)'
             )
             
             return fig
