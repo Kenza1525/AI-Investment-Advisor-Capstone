@@ -4,10 +4,7 @@ import pandas as pd
 import plotly.graph_objs as go
 import os
 import json
-from profiles_db import init_db, insert_profile
 
-# Initialize the database when the app starts
-init_db()
 
 external_scripts = [
     'http://localhost:8000/copilot/index.js'
