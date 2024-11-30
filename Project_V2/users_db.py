@@ -50,12 +50,15 @@ def register_user(username, password, fname, lname, email, career_status):
 
 def get_user(username):
     """Retrieve user details by username"""
-    conn = sqlite3.connect('users.db')
-    c = conn.cursor()
-    c.execute("SELECT id, password FROM auth WHERE username = ?", (username,))
-    user = c.fetchone()
-    conn.close()
-    return user
+    try:
+        conn = sqlite3.connect('users.db')
+        c = conn.cursor()
+        c.execute("SELECT id, password FROM auth WHERE username = ?", (username,))
+        user = c.fetchone()
+        conn.close()
+        return user
+    except:
+        return None
 
 def verify_user(username, password):
     """Verify user credentials"""
