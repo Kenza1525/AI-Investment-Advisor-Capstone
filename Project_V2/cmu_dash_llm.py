@@ -32,6 +32,24 @@ def layout_llm(app, username):
         }
     }
 
+    logout_button = html.Button(
+        'Logout',
+        id='logout-button',
+        n_clicks=0,
+        style={
+            'position': 'absolute',
+            'top': '20px',
+            'right': '20px',
+            'zIndex': 1000,  # Ensure it's on top of other content
+            'cursor': 'pointer',
+            'background': '#ff4a4a',  # Red logout button
+            'color': 'white',
+            'border': 'none',
+            'borderRadius': '8px',
+            'padding': '8px 16px'
+        }
+    )
+
     app.layout = html.Div(
         style={
             'background': 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)',
@@ -41,6 +59,7 @@ def layout_llm(app, username):
             'color': '#ffffff'
         },
         children=[
+            logout_button,
             html.H1(
                 f'Welcome, {username}',
                 style={
