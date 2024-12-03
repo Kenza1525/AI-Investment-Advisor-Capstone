@@ -364,7 +364,7 @@ def main_layout(app):
     @app.callback(
         [Output("url-log", "pathname"), Output("message-signup", "children"), Output("fname", "value"), Output("lname", "value"), Output("susername", "value"), Output("email", "value"), Output("spassword", "value"), Output("confirm_pass", "value")],
         [Input("sregister-btn", "n_clicks")],
-        [State("fname", "value"), State("lname", "value"), State("susername", "value"), State("email", "value"), State("spassword", "value"), State("confirm_pass", "value"), State("occupation-d", "value")]
+        [State("fname", "value"), State("lname", "value"), State("susername", "value"), State("email", "value"), State("spassword", "value"), State("confirm_pass", "value"), State("occupation", "value")]
     )
     def signup_process(nclicks, fname, lname, susername, email, spassword, confirm_pass, occupation):
         ctx = callback_context
