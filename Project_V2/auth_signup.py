@@ -96,22 +96,22 @@ def signup_layout():
                             dcc.Input(id="occupation", type="text", placeholder="Career Status e.g Recent Graduate, Retiree", className="custom-input")
                         ],
                     ),
-                    html.Div(
-                        className="custom-dropdown-input",
-                        children=[
-                            dcc.Dropdown(
-                                id="occupation-d",
-                                options=[
-                                    {"label": "Recent Graduate", "value": "student"},
-                                    {"label": "Working Professional", "value": "working"},
-                                    {"label": "Retiree", "value": "retiree"},
-                                    {"label": "Other", "value": "other"}
-                                ],
-                                placeholder="Career Status",
-                                className="dropdown"
-                            )
-                        ]
-                    ),
+                    # html.Div(
+                    #     className="custom-dropdown-input",
+                    #     children=[
+                    #         dcc.Dropdown(
+                    #             id="occupation-d",
+                    #             options=[
+                    #                 {"label": "Recent Graduate", "value": "student"},
+                    #                 {"label": "Working Professional", "value": "working"},
+                    #                 {"label": "Retiree", "value": "retiree"},
+                    #                 {"label": "Other", "value": "other"}
+                    #             ],
+                    #             placeholder="Career Status",
+                    #             className="dropdown"
+                    #         )
+                    #     ]
+                    # ),
                     html.Div(
                         className="button-container",
                         children=[
