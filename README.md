@@ -72,13 +72,19 @@ Dash displays investment distributions as pie charts and portfolio forecasts as 
 
 
 ## File Structure
-1. agent.py: Defines the agent's interaction logic.
-2. cmu-dash.py: Frontend dashboard for visualizing outputs.
-3. main.py: Backend API manager.
-4. profile_tool.py, personalised_advise_tool.py, portfolio_forecast.py, education_tool.py: Custom tools for the system.
-5. users_db.py, profiles_db.py, feedback_db.py: Database management modules.
-6. clientside.js, script2.js: Frontend event and widget management scripts.
-7. questions.py: Questionnaire logic for risk profiling.
+1. agent/agent.py
+2. cmu-dash_llm.py
+3. main.py: Backend API manager
+4. tools/profile_tool.py
+5. tools/personalised_advise_tool.py
+6. tools/portfolio_forecast.py
+7. tools/education_tool.py
+8. users_db.py
+9. debug_db.py
+10. feedback_db.py
+11. assets/clientside.js
+12. assets/script2.js
+13. questions.py
 
 # ---------------------- Future Work -----------------------
 Expand educational content to include more global markets.
