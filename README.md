@@ -1,27 +1,95 @@
 # AI-Investment-Advisor-Capstone
+# ------------------------- Project Overview  ----------------------
+This project is a custom-built Investment Advisory System designed to leverage Large Language Models (LLMs) and domain-specific tools to offer personalized financial advice, risk profiling, portfolio forecasting, and educational resources. The system integrates OpenAI's GPT model with LangChain, a retrieval-augmented generation (RAG) architecture, custom tools, and a Dash-powered interactive dashboard for visualization.
 
-#----------------------------Update----------------------------------------------
+## Features
+1. Personalized Investment Advice: Tailored investment recommendations based on user responses to a risk assessment questionnaire.
+2. Portfolio Forecasting: Projects the growth of a user's investment portfolio over a specified time horizon.
+3. Investment Education: Provides educational insights about the South African financial market.
+4. Interactive Dashboard: Displays recommendations and portfolio forecasts using Dash for intuitive visualization.
+6. Integration with LangChain: Ensures seamless handling of natural language queries and context-aware responses.
+7. User Feedback Management: Collects and stores user feedback for improving system functionality.
 
-The code files have been reorganized. The files you need now are the ones in tools, agent, assets, profiles_db.py and the cmu-dash.py
 
-If you clone the repo, here is how you can run the project now.
+# -----------------------System Architecture ------------------------
+The project is composed of several tightly integrated components, as detailed below.
 
-`python3 -m chainlit run agent/agent.py -w -h`
-`python3 cmu-dash.py`
+## Backend Components
+1. Agent System: Defined in agent.py, it orchestrates the interaction between LLMs, tools, and user inputs using LangChain. Tools include:
 
-Make sure tools, assets, agent,profiles_db.py and cmu-dash.py live in the same directory before you run the command above
-To run the project,
-Clone this repo. Go into the project_code directory. Run the dash app this way `python3 cmu-dash.py`
-Run the copilot this way: `python3 -m chainlit run chat-hypo-pilot.py -w -h`
-Note: both must be running. You can do that by creatingh two terminal sessions - one for each.
+2. Risk Profiling Tool (profile_tool.py) to assess a user's risk tolerance.
+3. Personalized Advice Tool (personalised_advise_tool.py) for generating recommendations based on the risk profile.
+4. Portfolio Forecaster (portfolio_forecast.py) for calculating growth projections.
+5. Education Tool (education_tool.py) to provide domain-specific financial education.
+6. APIs: The main.py serves as the entry point, managing API requests and interactions with the tools.
 
-#--------------------------Updates made----------------------------------------------#
+## Database Management
+1. users_db.py: Handles user authentication and registration.
+2. feedback_db.py: Logs and processes user feedback for system improvements.
 
-I have added a yahoo finance tool. Here is what it does:
-1. It gets current market performance summary data from yahoo finance.
-2. It groups the different assets returned in the market summary into asset classes along with the price change and percentage change information associated with each asset
-3. It then computes a combined normalized values of these two quantities and use that to rank the asset classes in terms of performance.
-4. This tool is used to make recommendations to users based on performing asset classes.
-5. When personalized investment advise is sought, it combines this information with the user profile information to make the recommendations.
-6. It needs a little bit of cleaning up as I still have some inconsistent system prompts and information in the InvestmentTool that contradicts the other tool.
-7. This needs fixing for the agent to work well
+## Frontend Components
+1. Dash Dashboard (cmu-dash.py): Displays investment forecasts, risk profiles, and user-specific recommendations interactively.
+2. clientside.js: Manages client-side events, including redirections and widget updates.
+3. script2.js: Handles communication between the frontend and backend for updates like investment distributions and portfolio forecasts.
+
+# --------------------- Installation and Setup ----------------------
+## Prerequisites:
+1. Python 3.8 or higher
+2. Node.js (for frontend integration)
+3. Access tokens for OpenAI and GitHub
+
+## Clone the repository.
+Run `git clone https://github.com/Kenza1525/AI-Investment-Advisor-Capstone.git` to clone the project into your local machine
+
+## Install dependencies
+Run `pip install -r requirements.txt` to install all the required software packages for this project.
+
+## Set environment variables for API keys and access tokens in a .env file
+OPENAI_API_KEY=your_openai_api_key
+GITHUB_ACCESS_TOKEN=your_github_access_token
+How to run the application:
+1. `python main.py`
+2. `python feedback.py`
+3. `python3 -m chainlit run agent/agent.py -w -h`
+
+# -------------------------How It Works ---------------------------------
+## Risk Profiling
+
+Users complete a questionnaire to determine their risk tolerance.
+The RiskBasedAllocator in profile_tool.py calculates a risk score and allocates weights to asset classes.
+Personalized Advice:
+
+Using the PersonalizedAdviceTool, the system generates a recommended distribution of investment across asset classes.
+Portfolio Forecasting:
+
+The PortfolioForecaster projects portfolio growth over a time horizon, adjusting for inflation and asset-specific growth rates.
+Investment Education:
+
+The InvestmentEducationTool retrieves educational content from a GitHub repository, processed using FAISS for efficient search and retrieval.
+Interactive Visualizations:
+
+Dash displays investment distributions as pie charts and portfolio forecasts as line graphs.
+
+
+## File Structure
+1. agent.py: Defines the agent's interaction logic.
+2. cmu-dash.py: Frontend dashboard for visualizing outputs.
+3. main.py: Backend API manager.
+4. profile_tool.py, personalised_advise_tool.py, portfolio_forecast.py, education_tool.py: Custom tools for the system.
+5. users_db.py, profiles_db.py, feedback_db.py: Database management modules.
+6. clientside.js, script2.js: Frontend event and widget management scripts.
+7. questions.py: Questionnaire logic for risk profiling.
+
+# ---------------------- Future Work -----------------------
+Expand educational content to include more global markets.
+Introduce additional forecasting methods for higher accuracy.
+Incorporate multi-language support for better accessibility.
+
+
+
+
+
+
+
+
+
