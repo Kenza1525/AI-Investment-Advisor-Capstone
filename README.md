@@ -28,15 +28,14 @@ The project is composed of several tightly integrated components, as detailed be
 2. feedback_db.py: Logs and processes user feedback for system improvements.
 
 ## Frontend Components
-1. Dash Dashboard (cmu-dash.py): Displays investment forecasts, risk profiles, and user-specific recommendations interactively.
+1. Dash Dashboard (cmu-dash_llm.py): Displays investment forecasts, risk profiles, and user-specific recommendations interactively.
 2. clientside.js: Manages client-side events, including redirections and widget updates.
 3. script2.js: Handles communication between the frontend and backend for updates like investment distributions and portfolio forecasts.
 
 # --------------------- Installation and Setup ----------------------
 ## Prerequisites:
 1. Python 3.8 or higher
-2. Node.js (for frontend integration)
-3. Access tokens for OpenAI and GitHub
+2. Access tokens for OpenAI and GitHub
 
 ## Clone the repository.
 Run `git clone https://github.com/Kenza1525/AI-Investment-Advisor-Capstone.git` to clone the project into your local machine
@@ -46,8 +45,8 @@ Run `pip install -r requirements.txt` to install all the required software packa
 
 ## Set environment variables for API keys and access tokens in a .env file
 OPENAI_API_KEY=your_openai_api_key
-GITHUB_ACCESS_TOKEN=your_github_access_token
-How to run the application:
+
+To run the application, execute the following lines of code:
 1. `python main.py`
 2. `python feedback.py`
 3. `python3 -m chainlit run agent/agent.py -w -h`
