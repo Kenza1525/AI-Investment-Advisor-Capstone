@@ -7,7 +7,7 @@ from langchain.tools.retriever import create_retriever_tool
 
 class InvestmentEducationTool:
     def __init__(self, repo: str, access_token: str, api_key: str, chunk_size: int = 100, chunk_overlap: int = 20):
-        api_key = 'sk-M2Zf8AteM_beMwQ9Q4yfCWNOIOuBf8XtGp4Mbh3Ib-T3BlbkFJ8s1Yat1knh6EdNcnmrqykaPopYeFM5AjEYyn0UyfgA'
+        api_key = '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'
         self.repo = repo
         self.access_token = access_token
         self.api_key = api_key

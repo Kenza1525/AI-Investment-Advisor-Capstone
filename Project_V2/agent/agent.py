@@ -43,7 +43,7 @@ ACCESS_TOKEN = "github_pat_11AJW7SDQ0Om9Lqa7YXfLm_zlQ9l0T3ubNEapsG9dARdOeZpwtEZJ
 investment_tool_instance = InvestmentEducationTool(
     repo= "Ayebilla/SA_Investment_info",
     access_token=ACCESS_TOKEN,
-    api_key="sk-M2Zf8AteM_beMwQ9Q4yfCWNOIOuBf8XtGp4Mbh3Ib-T3BlbkFJ8s1Yat1knh6EdNcnmrqykaPopYeFM5AjEYyn0UyfgA"
+    api_key="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"
 )
 
 @tool("InvestmentEducationTool", return_direct=False)
@@ -148,8 +148,9 @@ class CustomDataLayer(cl_data.BaseDataLayer):
 def setup_chain():
 
     cl_data._data_layer = CustomDataLayer()
+    #sk-M2Zf8AteM_beMwQ9Q4yfCWNOIOuBf8XtGp4Mbh3Ib-T3BlbkFJ8s1Yat1knh6EdNcnmrqykaPopYeFM5AjEYyn0UyfgA
 
-    llm = ChatOpenAI(openai_api_key="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", model="gpt-3.5-turbo")
+    llm = ChatOpenAI(openai_api_key="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", model="gpt-4")
     tools = [personalized_advice_tool,investment_education_tool, forecast_portfolio_growth_tool]
     llm_with_tools = llm.bind_tools(tools)
     agent = (
